@@ -53,14 +53,6 @@ If you do not have a subscription and want to use the agent for free, follow the
 - `scripts/` – training (`train_model.py`), agent (`tool_develop.py`), utilities.
 - `notebooks/` – exploratory work (EDA, clustering, RFM).
 - `gradio/` – simple web interface.
-
-## Visual Animations (SVG)
-The repository includes SVG animation files that illustrate key workflows and concepts. GitHub renders SVGs directly in the README.
-
-- **churn_workflow_banner.svg** – Banner showing the end‑to‑end churn prediction workflow.
-- **churn_prediction_animation.svg** – Animated diagram of how a customer’s features flow through the model to produce a churn probability.
-- **space_readme_banner.svg** – Decorative banner with a space theme (optional visual flair).
-
 You can view them inline below:
 
 ![Churn Workflow Banner](churn_workflow_banner.svg)
