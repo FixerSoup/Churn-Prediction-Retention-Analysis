@@ -52,7 +52,7 @@ A focused project that segments customers, predicts churn, and lets you ask ques
 - If you already have a Claude Code subscription, you can use the agent directly without additional setup.  
 - If you do not have a subscription and want to use the agent for free, follow the prerequisites and steps above.
 
-## How to run via powershell
+## How to run via **powershell**
 1. Clone Repo
    ```
    git clone https://github.com/FixerSoup/Churn-Prediction-Retention-Analysis.git
@@ -61,7 +61,11 @@ A focused project that segments customers, predicts churn, and lets you ask ques
    ```
    cd Churn-Prediction-Retention-Analysis
    ```
-3. Create virtual env
+3. Create a `.env` file with your own Gemini key  
+   ```
+   'GEMINI_API_KEY="your_actual_api_key_here"' | Out-File -FilePath .env -Encoding utf8
+   ```
+4. Create virtual env
    ```
    python -m venv your_env_name
    ```
@@ -70,17 +74,13 @@ A focused project that segments customers, predicts churn, and lets you ask ques
    conda create -n your_env_name python=3.14
    conda activate your_env_name
    ```
-4. Activate venv
+5. Activate venv
    ```
    .\venv\Scripts\Activate.ps1
    ```  
-5. Install dependencies  
+6. Install dependencies  
    ```bash
    pip install -r requirements.txt
-   ```
-6. Create a `.env` file with your own Gemini key inside the project root folder(Churn-Prediction-Retention-Analysis):  
-   ```bash
-   GEMINI_API_KEY=your_key_here
    ```
 7. Launch the agent (or demo)  
    ```bash
@@ -114,7 +114,7 @@ python scripts/run_agent.py
 That’s it—short, churn‑focused, and ready to use.
 
 ## License
-- Do not copy paste and use this repo ⚠️
+- Do not copy paste and use this repo ❌
 - Use it as a branch/feature extension for your own churn systems ✅
 
 - A star is always appreciated if it helps you ⭐
