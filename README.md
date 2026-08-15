@@ -90,7 +90,15 @@ A focused project that segments customers, predicts churn, and lets you ask ques
 ```
 python scripts/save_to_pdf.py
 ```
-
+## Some Examples for Prompts
+```
+1. Churn Rate Overview: "Calculate the overall churn rate and show monthly churn trends over the past 6 months. Include a simple line chart visualization."
+2. Customer Segmentation: "Segment customers into 3 groups based on their usage frequency and monthly spending. Describe each segment's characteristics and churn risk level."
+3. Retention Cohort Analysis: "Perform cohort analysis showing 30-day, 60-day, and 90-day retention rates for customers who signed up in the last 3 months."
+4. Key Churn Drivers: "Identify the top 5 factors most strongly associated with churn using simple correlation analysis. Explain each factor in plain language."
+5. At-Risk Customer Identification: "List 10 customers with the highest churn probability based on their recent behavior changes. Include their risk score and key warning signs."
+6. Simple Retention Score: "Create a retention health score (0-100) for each customer based on login frequency, feature usage, and support tickets. Show distribution of scores across customer base."
+```
 ## **Unique Feature of the project**
 - use claude code via ollama to understand the project workflow easily
 ## Files you’ll see
