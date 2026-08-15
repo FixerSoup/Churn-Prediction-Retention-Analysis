@@ -1,0 +1,317 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 400" width="100%" height="400" role="img" aria-label="Night sky with shining moon and twinkling stars">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#02020a"/>
+      <stop offset="35%" stop-color="#060714"/>
+      <stop offset="65%" stop-color="#0b0f2a"/>
+      <stop offset="100%" stop-color="#141238"/>
+    </linearGradient>
+
+    <radialGradient id="nebula1" cx="20%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#5b3a9e" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#5b3a9e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula2" cx="80%" cy="60%" r="55%">
+      <stop offset="0%" stop-color="#1e4d8f" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#1e4d8f" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff8e0" stop-opacity="0.55"/>
+      <stop offset="35%" stop-color="#fff3c4" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#fff3c4" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="moonBody" cx="38%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#fffdf5"/>
+      <stop offset="60%" stop-color="#fdf1cf"/>
+      <stop offset="100%" stop-color="#e8d9a8"/>
+    </radialGradient>
+
+    <linearGradient id="shootGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="1"/>
+    </linearGradient>
+
+    <filter id="softBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+
+    <style>
+      .star {
+        fill: #ffffff;
+        opacity: var(--maxop, 0.9);
+        animation: twinkle var(--dur, 3s) ease-in-out infinite;
+        animation-delay: var(--delay, 0s);
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.15; transform: scale(0.8); }
+        50% { opacity: var(--maxop, 0.9); transform: scale(1.15); }
+      }
+
+      .sparkle {
+        opacity: 0;
+        animation: sparkleTwinkle var(--dur, 4s) ease-in-out infinite;
+        animation-delay: var(--delay, 0s);
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+      @keyframes sparkleTwinkle {
+        0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); }
+        50% { opacity: 0.9; transform: scale(1) rotate(20deg); }
+      }
+
+      .moon-group {
+        animation: moonFloat 8s ease-in-out infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+      @keyframes moonFloat {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+
+      .moon-glow {
+        animation: glowPulse 6s ease-in-out infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+      @keyframes glowPulse {
+        0%, 100% { opacity: 0.7; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.12); }
+      }
+
+      @keyframes shootfade {
+        0% { opacity: 0; transform: translate(0,0); }
+        2% { opacity: 1; }
+        14% { opacity: 0; transform: translate(120px, 60px); }
+        100% { opacity: 0; }
+      }
+      
+.shoot0 {
+  opacity: 0;
+  animation: shootfade 14s linear infinite;
+  animation-delay: 0.5s;
+  transform-box: fill-box;
+}
+.shoot1 {
+  opacity: 0;
+  animation: shootfade 14s linear infinite;
+  animation-delay: 6.5s;
+  transform-box: fill-box;
+}
+.shoot2 {
+  opacity: 0;
+  animation: shootfade 14s linear infinite;
+  animation-delay: 11.5s;
+  transform-box: fill-box;
+}
+    </style>
+  </defs>
+
+  <!-- Sky background -->
+  <rect x="0" y="0" width="1500" height="400" fill="url(#skyGrad)"/>
+  <rect x="0" y="0" width="1500" height="400" fill="url(#nebula1)"/>
+  <rect x="0" y="0" width="1500" height="400" fill="url(#nebula2)"/>
+
+  <!-- Stars -->
+  <g>
+    <circle class="star" cx="959.14" cy="8.5" r="1.4" style="--dur:3.36s; --delay:0.84s; --maxop:0.6;"/>
+<circle class="star" cx="1111.0" cy="185.42" r="2" style="--dur:2.61s; --delay:0.56s; --maxop:0.65;"/>
+<circle class="star" cx="903.03" cy="190.82" r="2" style="--dur:3.27s; --delay:3.54s; --maxop:0.91;"/>
+<circle class="star" cx="9.75" cy="273.98" r="2" style="--dur:3.69s; --delay:0.93s; --maxop:0.98;"/>
+<circle class="star" cx="504.89" cy="31.53" r="0.8" style="--dur:3.76s; --delay:2.06s; --maxop:0.67;"/>
+<circle class="star" cx="65.18" cy="156.2" r="0.8" style="--dur:5.91s; --delay:2.27s; --maxop:0.8;"/>
+<circle class="star" cx="1244.11" cy="210.3" r="1.6" style="--dur:4.52s; --delay:4.23s; --maxop:0.57;"/>
+<circle class="star" cx="341.85" cy="98.39" r="0.8" style="--dur:5.49s; --delay:5.2s; --maxop:0.72;"/>
+<circle class="star" cx="680.12" cy="283.6" r="1" style="--dur:3.8s; --delay:1.26s; --maxop:0.67;"/>
+<circle class="star" cx="1404.98" cy="220.33" r="1" style="--dur:4.37s; --delay:1.47s; --maxop:0.76;"/>
+<circle class="star" cx="404.92" cy="314.63" r="1.2" style="--dur:4.9s; --delay:5.06s; --maxop:0.9;"/>
+<circle class="star" cx="343.57" cy="10.91" r="1.6" style="--dur:3.9s; --delay:0.4s; --maxop:0.96;"/>
+<circle class="star" cx="850.77" cy="244.09" r="1.2" style="--dur:4.79s; --delay:2.37s; --maxop:0.96;"/>
+<circle class="star" cx="688.28" cy="90.06" r="1.2" style="--dur:5.11s; --delay:3.23s; --maxop:0.89;"/>
+<circle class="star" cx="642.65" cy="198.4" r="1.6" style="--dur:3.27s; --delay:5.99s; --maxop:0.78;"/>
+<circle class="star" cx="136.36" cy="16.02" r="0.8" style="--dur:3.03s; --delay:0.96s; --maxop:0.86;"/>
+<circle class="star" cx="894.61" cy="130.82" r="2.4" style="--dur:4.35s; --delay:5.83s; --maxop:0.94;"/>
+<circle class="star" cx="17.22" cy="245.05" r="1.4" style="--dur:5.19s; --delay:2.04s; --maxop:0.68;"/>
+<circle class="star" cx="237.24" cy="1.1" r="1.4" style="--dur:5.9s; --delay:4.57s; --maxop:0.78;"/>
+<circle class="star" cx="159.62" cy="212.6" r="1.2" style="--dur:3.03s; --delay:4.58s; --maxop:0.79;"/>
+<circle class="star" cx="1167.94" cy="180.32" r="0.6" style="--dur:4.6s; --delay:2.93s; --maxop:0.6;"/>
+<circle class="star" cx="544.47" cy="335.01" r="1.4" style="--dur:3.34s; --delay:1.45s; --maxop:0.81;"/>
+<circle class="star" cx="118.14" cy="248.85" r="0.8" style="--dur:5.92s; --delay:3.2s; --maxop:0.61;"/>
+<circle class="star" cx="989.63" cy="321.93" r="1" style="--dur:3.43s; --delay:5.23s; --maxop:0.74;"/>
+<circle class="star" cx="317.7" cy="183.36" r="1.2" style="--dur:5.0s; --delay:2.39s; --maxop:0.85;"/>
+<circle class="star" cx="560.13" cy="305.87" r="2.4" style="--dur:2.92s; --delay:1.35s; --maxop:0.7;"/>
+<circle class="star" cx="882.46" cy="78.24" r="1.2" style="--dur:2.53s; --delay:4.25s; --maxop:0.58;"/>
+<circle class="star" cx="101.1" cy="10.68" r="1.6" style="--dur:2.75s; --delay:1.43s; --maxop:0.85;"/>
+<circle class="star" cx="321.36" cy="44.99" r="2.4" style="--dur:3.35s; --delay:2.84s; --maxop:0.73;"/>
+<circle class="star" cx="141.49" cy="224.05" r="1.6" style="--dur:3.98s; --delay:2.8s; --maxop:0.88;"/>
+<circle class="star" cx="1010.05" cy="334.62" r="0.8" style="--dur:2.71s; --delay:4.37s; --maxop:0.91;"/>
+<circle class="star" cx="163.9" cy="65.14" r="2.4" style="--dur:2.99s; --delay:1.1s; --maxop:0.76;"/>
+<circle class="star" cx="1311.73" cy="25.63" r="0.8" style="--dur:2.68s; --delay:6.0s; --maxop:0.93;"/>
+<circle class="star" cx="1453.49" cy="314.96" r="1.2" style="--dur:3.08s; --delay:2.91s; --maxop:0.65;"/>
+<circle class="star" cx="601.56" cy="19.94" r="2" style="--dur:2.51s; --delay:2.34s; --maxop:0.97;"/>
+<circle class="star" cx="1177.69" cy="96.98" r="2.4" style="--dur:3.04s; --delay:1.78s; --maxop:0.99;"/>
+<circle class="star" cx="868.77" cy="184.35" r="1.6" style="--dur:2.7s; --delay:3.51s; --maxop:0.78;"/>
+<circle class="star" cx="1279.08" cy="53.53" r="0.8" style="--dur:5.48s; --delay:0.41s; --maxop:0.58;"/>
+<circle class="star" cx="1292.73" cy="137.28" r="1.2" style="--dur:4.53s; --delay:0.24s; --maxop:0.59;"/>
+<circle class="star" cx="986.06" cy="192.18" r="1.6" style="--dur:5.77s; --delay:1.23s; --maxop:0.87;"/>
+<circle class="star" cx="358.03" cy="134.57" r="1.4" style="--dur:4.1s; --delay:5.57s; --maxop:0.97;"/>
+<circle class="star" cx="13.97" cy="211.19" r="0.8" style="--dur:2.76s; --delay:1.28s; --maxop:0.67;"/>
+<circle class="star" cx="1399.89" cy="299.49" r="1.2" style="--dur:3.79s; --delay:0.95s; --maxop:0.93;"/>
+<circle class="star" cx="1055.31" cy="207.97" r="0.6" style="--dur:4.84s; --delay:3.33s; --maxop:0.97;"/>
+<circle class="star" cx="155.38" cy="298.56" r="1.4" style="--dur:2.9s; --delay:0.64s; --maxop:0.8;"/>
+<circle class="star" cx="408.52" cy="205.64" r="1.6" style="--dur:3.21s; --delay:3.81s; --maxop:0.67;"/>
+<circle class="star" cx="732.8" cy="307.81" r="0.6" style="--dur:2.82s; --delay:2.54s; --maxop:0.67;"/>
+<circle class="star" cx="5.32" cy="262.18" r="1.4" style="--dur:3.07s; --delay:2.65s; --maxop:0.87;"/>
+<circle class="star" cx="841.36" cy="38.04" r="1" style="--dur:4.41s; --delay:5.01s; --maxop:0.81;"/>
+<circle class="star" cx="222.14" cy="43.33" r="1.4" style="--dur:3.78s; --delay:5.6s; --maxop:0.99;"/>
+<circle class="star" cx="59.84" cy="121.66" r="1.2" style="--dur:4.83s; --delay:2.12s; --maxop:0.8;"/>
+<circle class="star" cx="1312.07" cy="331.1" r="1" style="--dur:5.74s; --delay:1.42s; --maxop:0.62;"/>
+<circle class="star" cx="1199.83" cy="60.2" r="2" style="--dur:2.59s; --delay:4.42s; --maxop:0.7;"/>
+<circle class="star" cx="1396.22" cy="272.76" r="1.2" style="--dur:3.43s; --delay:4.72s; --maxop:0.6;"/>
+<circle class="star" cx="1308.25" cy="291.92" r="1.2" style="--dur:3.2s; --delay:5.51s; --maxop:0.71;"/>
+<circle class="star" cx="1230.8" cy="296.25" r="1.2" style="--dur:2.58s; --delay:1.16s; --maxop:0.7;"/>
+<circle class="star" cx="1296.53" cy="328.74" r="1.4" style="--dur:3.73s; --delay:3.06s; --maxop:0.86;"/>
+<circle class="star" cx="1265.49" cy="112.59" r="0.6" style="--dur:2.9s; --delay:5.82s; --maxop:0.63;"/>
+<circle class="star" cx="1443.8" cy="90.26" r="0.8" style="--dur:4.59s; --delay:2.07s; --maxop:0.9;"/>
+<circle class="star" cx="654.59" cy="334.64" r="0.8" style="--dur:3.85s; --delay:3.46s; --maxop:0.66;"/>
+<circle class="star" cx="1063.18" cy="0.58" r="1.2" style="--dur:3.77s; --delay:0.42s; --maxop:0.85;"/>
+<circle class="star" cx="495.3" cy="106.73" r="0.8" style="--dur:5.02s; --delay:1.8s; --maxop:0.69;"/>
+<circle class="star" cx="612.59" cy="136.82" r="1.4" style="--dur:4.44s; --delay:1.15s; --maxop:0.85;"/>
+<circle class="star" cx="568.72" cy="254.37" r="1" style="--dur:4.65s; --delay:1.81s; --maxop:0.8;"/>
+<circle class="star" cx="0.61" cy="97.55" r="2" style="--dur:5.25s; --delay:3.64s; --maxop:0.7;"/>
+<circle class="star" cx="662.68" cy="229.71" r="2.4" style="--dur:5.28s; --delay:5.76s; --maxop:0.88;"/>
+<circle class="star" cx="988.28" cy="96.49" r="1.6" style="--dur:2.83s; --delay:5.71s; --maxop:0.66;"/>
+<circle class="star" cx="465.63" cy="274.23" r="1" style="--dur:2.59s; --delay:1.47s; --maxop:0.76;"/>
+<circle class="star" cx="1274.61" cy="24.76" r="2" style="--dur:5.6s; --delay:3.45s; --maxop:0.87;"/>
+<circle class="star" cx="575.97" cy="135.88" r="1" style="--dur:4.8s; --delay:0.03s; --maxop:0.89;"/>
+<circle class="star" cx="1155.07" cy="36.24" r="2" style="--dur:3.27s; --delay:4.82s; --maxop:0.86;"/>
+<circle class="star" cx="696.82" cy="189.52" r="0.8" style="--dur:4.1s; --delay:4.81s; --maxop:0.85;"/>
+<circle class="star" cx="1481.84" cy="202.45" r="2.4" style="--dur:4.64s; --delay:4.32s; --maxop:0.78;"/>
+<circle class="star" cx="1245.85" cy="186.28" r="1" style="--dur:5.1s; --delay:2.85s; --maxop:0.67;"/>
+<circle class="star" cx="370.86" cy="216.8" r="2.4" style="--dur:4.69s; --delay:1.65s; --maxop:0.58;"/>
+<circle class="star" cx="428.59" cy="92.38" r="1.6" style="--dur:5.63s; --delay:0.48s; --maxop:0.62;"/>
+<circle class="star" cx="574.55" cy="51.95" r="1.2" style="--dur:2.72s; --delay:2.45s; --maxop:0.79;"/>
+<circle class="star" cx="623.66" cy="70.32" r="2" style="--dur:3.86s; --delay:4.62s; --maxop:0.98;"/>
+<circle class="star" cx="29.3" cy="299.42" r="2" style="--dur:4.17s; --delay:5.66s; --maxop:0.68;"/>
+<circle class="star" cx="584.98" cy="303.16" r="2" style="--dur:4.38s; --delay:4.41s; --maxop:0.91;"/>
+<circle class="star" cx="1346.72" cy="166.0" r="1.4" style="--dur:4.03s; --delay:0.17s; --maxop:0.7;"/>
+<circle class="star" cx="1018.71" cy="137.47" r="1" style="--dur:5.44s; --delay:5.52s; --maxop:0.99;"/>
+<circle class="star" cx="801.19" cy="308.36" r="0.6" style="--dur:2.79s; --delay:2.57s; --maxop:0.94;"/>
+<circle class="star" cx="272.59" cy="88.45" r="1.6" style="--dur:3.24s; --delay:1.96s; --maxop:0.89;"/>
+<circle class="star" cx="568.69" cy="255.68" r="2" style="--dur:3.38s; --delay:0.49s; --maxop:0.56;"/>
+<circle class="star" cx="809.13" cy="339.97" r="1.6" style="--dur:3.28s; --delay:0.41s; --maxop:0.98;"/>
+<circle class="star" cx="60.39" cy="10.55" r="1.2" style="--dur:3.2s; --delay:0.12s; --maxop:0.62;"/>
+<circle class="star" cx="189.33" cy="227.62" r="1.2" style="--dur:4.13s; --delay:1.54s; --maxop:0.72;"/>
+<circle class="star" cx="908.84" cy="327.67" r="0.8" style="--dur:5.22s; --delay:0.98s; --maxop:0.69;"/>
+<circle class="star" cx="868.03" cy="315.82" r="2" style="--dur:3.89s; --delay:4.29s; --maxop:0.58;"/>
+<circle class="star" cx="1035.92" cy="213.26" r="0.8" style="--dur:4.94s; --delay:1.81s; --maxop:0.86;"/>
+<circle class="star" cx="1208.29" cy="270.72" r="0.6" style="--dur:3.72s; --delay:2.57s; --maxop:0.72;"/>
+<circle class="star" cx="758.94" cy="116.02" r="2" style="--dur:5.38s; --delay:0.63s; --maxop:0.98;"/>
+<circle class="star" cx="953.38" cy="281.76" r="1" style="--dur:4.02s; --delay:4.4s; --maxop:0.98;"/>
+<circle class="star" cx="405.12" cy="274.79" r="2.4" style="--dur:4.13s; --delay:4.95s; --maxop:0.82;"/>
+<circle class="star" cx="483.46" cy="83.47" r="0.8" style="--dur:3.48s; --delay:2.7s; --maxop:0.89;"/>
+<circle class="star" cx="854.77" cy="227.18" r="1.6" style="--dur:2.6s; --delay:5.11s; --maxop:0.63;"/>
+<circle class="star" cx="318.18" cy="271.26" r="1.6" style="--dur:3.48s; --delay:3.58s; --maxop:0.95;"/>
+<circle class="star" cx="833.69" cy="175.65" r="1.2" style="--dur:2.8s; --delay:4.32s; --maxop:0.77;"/>
+<circle class="star" cx="1137.25" cy="234.81" r="2.4" style="--dur:4.07s; --delay:0.1s; --maxop:0.68;"/>
+<circle class="star" cx="606.6" cy="82.72" r="1.6" style="--dur:4.16s; --delay:3.19s; --maxop:0.74;"/>
+<circle class="star" cx="1118.9" cy="112.47" r="2.4" style="--dur:3.45s; --delay:1.51s; --maxop:0.6;"/>
+<circle class="star" cx="288.88" cy="40.65" r="1" style="--dur:3.17s; --delay:4.43s; --maxop:0.67;"/>
+<circle class="star" cx="884.38" cy="258.47" r="1.4" style="--dur:5.93s; --delay:5.0s; --maxop:0.68;"/>
+<circle class="star" cx="541.32" cy="102.77" r="1" style="--dur:3.46s; --delay:5.85s; --maxop:0.8;"/>
+<circle class="star" cx="1046.13" cy="42.94" r="2.4" style="--dur:2.86s; --delay:0.07s; --maxop:0.68;"/>
+<circle class="star" cx="718.07" cy="115.84" r="0.6" style="--dur:3.38s; --delay:5.17s; --maxop:0.6;"/>
+<circle class="star" cx="98.02" cy="167.19" r="0.6" style="--dur:3.03s; --delay:4.87s; --maxop:0.98;"/>
+<circle class="star" cx="127.77" cy="84.38" r="2" style="--dur:4.62s; --delay:4.74s; --maxop:0.65;"/>
+<circle class="star" cx="783.86" cy="153.17" r="2.4" style="--dur:3.54s; --delay:3.53s; --maxop:0.74;"/>
+<circle class="star" cx="852.94" cy="20.48" r="0.8" style="--dur:5.82s; --delay:1.25s; --maxop:0.64;"/>
+<circle class="star" cx="990.64" cy="53.4" r="1" style="--dur:4.43s; --delay:0.94s; --maxop:0.73;"/>
+<circle class="star" cx="1034.06" cy="159.77" r="0.6" style="--dur:3.31s; --delay:4.24s; --maxop:0.87;"/>
+<circle class="star" cx="681.05" cy="233.71" r="1.4" style="--dur:5.26s; --delay:3.75s; --maxop:0.85;"/>
+<circle class="star" cx="1400.5" cy="144.55" r="1.2" style="--dur:4.77s; --delay:5.45s; --maxop:0.92;"/>
+<circle class="star" cx="107.11" cy="56.41" r="1.4" style="--dur:4.58s; --delay:4.95s; --maxop:0.96;"/>
+<circle class="star" cx="658.73" cy="159.36" r="1.4" style="--dur:4.95s; --delay:5.66s; --maxop:0.78;"/>
+<circle class="star" cx="740.69" cy="27.35" r="0.6" style="--dur:5.61s; --delay:4.41s; --maxop:0.82;"/>
+<circle class="star" cx="38.8" cy="77.83" r="0.6" style="--dur:6.0s; --delay:4.03s; --maxop:0.67;"/>
+<circle class="star" cx="60.35" cy="257.13" r="2.4" style="--dur:4.32s; --delay:2.65s; --maxop:0.68;"/>
+<circle class="star" cx="1495.42" cy="148.2" r="2.4" style="--dur:5.89s; --delay:2.82s; --maxop:0.73;"/>
+<circle class="star" cx="481.59" cy="35.56" r="1" style="--dur:3.65s; --delay:4.16s; --maxop:0.68;"/>
+<circle class="star" cx="1417.79" cy="276.61" r="0.6" style="--dur:4.09s; --delay:1.89s; --maxop:0.7;"/>
+<circle class="star" cx="1455.28" cy="137.42" r="0.6" style="--dur:4.8s; --delay:3.26s; --maxop:0.74;"/>
+<circle class="star" cx="281.37" cy="123.0" r="2.4" style="--dur:4.69s; --delay:4.56s; --maxop:0.64;"/>
+<circle class="star" cx="823.83" cy="315.41" r="2.4" style="--dur:5.58s; --delay:2.91s; --maxop:0.56;"/>
+<circle class="star" cx="945.03" cy="271.77" r="1" style="--dur:3.59s; --delay:0.08s; --maxop:0.73;"/>
+<circle class="star" cx="337.05" cy="286.08" r="0.8" style="--dur:4.12s; --delay:0.7s; --maxop:0.92;"/>
+<circle class="star" cx="747.56" cy="243.65" r="1.4" style="--dur:3.95s; --delay:2.89s; --maxop:0.76;"/>
+<circle class="star" cx="685.18" cy="49.18" r="1.2" style="--dur:5.73s; --delay:3.05s; --maxop:0.95;"/>
+<circle class="star" cx="1296.04" cy="93.92" r="2" style="--dur:3.69s; --delay:4.73s; --maxop:0.67;"/>
+<circle class="star" cx="3.85" cy="246.86" r="2.4" style="--dur:5.53s; --delay:2.68s; --maxop:0.77;"/>
+<circle class="star" cx="498.66" cy="259.38" r="2" style="--dur:4.09s; --delay:1.93s; --maxop:0.63;"/>
+<circle class="star" cx="1046.25" cy="194.41" r="1.2" style="--dur:5.5s; --delay:2.46s; --maxop:0.69;"/>
+<circle class="star" cx="709.46" cy="310.57" r="2" style="--dur:3.85s; --delay:3.98s; --maxop:0.92;"/>
+<circle class="star" cx="1471.23" cy="168.41" r="0.6" style="--dur:2.94s; --delay:5.79s; --maxop:0.7;"/>
+<circle class="star" cx="150.55" cy="287.31" r="0.8" style="--dur:4.34s; --delay:2.74s; --maxop:0.88;"/>
+<circle class="star" cx="614.97" cy="222.63" r="1" style="--dur:2.76s; --delay:4.69s; --maxop:0.67;"/>
+<circle class="star" cx="934.89" cy="135.14" r="0.8" style="--dur:5.48s; --delay:5.11s; --maxop:0.94;"/>
+<circle class="star" cx="570.01" cy="107.66" r="2.4" style="--dur:5.55s; --delay:0.22s; --maxop:0.58;"/>
+  </g>
+
+  <!-- Sparkle stars -->
+  <g>
+    
+  <g class="sparkle" style="--dur:4.99s; --delay:2.17s;" transform="translate(931.0,222.6)">
+    <path d="M0,-12.98 L2.3364,-2.3364 L12.98,0 L2.3364,2.3364 L0,12.98 L-2.3364,2.3364 L-12.98,0 L-2.3364,-2.3364 Z" fill="#ffffff"/>
+  </g>
+  <g class="sparkle" style="--dur:4.39s; --delay:3.47s;" transform="translate(195.85,159.42)">
+    <path d="M0,-12.24 L2.2032,-2.2032 L12.24,0 L2.2032,2.2032 L0,12.24 L-2.2032,2.2032 L-12.24,0 L-2.2032,-2.2032 Z" fill="#ffffff"/>
+  </g>
+  <g class="sparkle" style="--dur:4.09s; --delay:1.87s;" transform="translate(1306.73,30.12)">
+    <path d="M0,-11.78 L2.1203999999999996,-2.1203999999999996 L11.78,0 L2.1203999999999996,2.1203999999999996 L0,11.78 L-2.1203999999999996,2.1203999999999996 L-11.78,0 L-2.1203999999999996,-2.1203999999999996 Z" fill="#ffffff"/>
+  </g>
+  <g class="sparkle" style="--dur:5.09s; --delay:0.85s;" transform="translate(260.89,136.86)">
+    <path d="M0,-10.4 L1.8719999999999999,-1.8719999999999999 L10.4,0 L1.8719999999999999,1.8719999999999999 L0,10.4 L-1.8719999999999999,1.8719999999999999 L-10.4,0 L-1.8719999999999999,-1.8719999999999999 Z" fill="#ffffff"/>
+  </g>
+  <g class="sparkle" style="--dur:3.98s; --delay:4.56s;" transform="translate(168.98,211.58)">
+    <path d="M0,-10.72 L1.9296,-1.9296 L10.72,0 L1.9296,1.9296 L0,10.72 L-1.9296,1.9296 L-10.72,0 L-1.9296,-1.9296 Z" fill="#ffffff"/>
+  </g>
+  <g class="sparkle" style="--dur:4.01s; --delay:0.05s;" transform="translate(257.5,121.45)">
+    <path d="M0,-8.52 L1.5335999999999999,-1.5335999999999999 L8.52,0 L1.5335999999999999,1.5335999999999999 L0,8.52 L-1.5335999999999999,1.5335999999999999 L-8.52,0 L-1.5335999999999999,-1.5335999999999999 Z" fill="#ffffff"/>
+  </g>
+  <g class="sparkle" style="--dur:3.82s; --delay:2.21s;" transform="translate(1170.39,218.27)">
+    <path d="M0,-11.07 L1.9926,-1.9926 L11.07,0 L1.9926,1.9926 L0,11.07 L-1.9926,1.9926 L-11.07,0 L-1.9926,-1.9926 Z" fill="#ffffff"/>
+  </g>
+  </g>
+
+  <!-- Shooting stars -->
+  <g>
+    
+  <g class="shoot shoot0">
+    <line x1="-50" y1="60" x2="420" y2="220" stroke="url(#shootGrad)" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <g class="shoot shoot1">
+    <line x1="525.0" y1="30" x2="905.0" y2="190" stroke="url(#shootGrad)" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <g class="shoot shoot2">
+    <line x1="1050.0" y1="10" x2="1450.0" y2="170" stroke="url(#shootGrad)" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  </g>
+
+  <!-- Moon -->
+  <g class="moon-group" transform="translate(1280,110)">
+    <circle class="moon-glow" cx="0" cy="0" r="95" fill="url(#moonGlow)"/>
+    <circle cx="0" cy="0" r="52" fill="url(#moonBody)"/>
+    <!-- craters -->
+    <circle cx="-14" cy="-10" r="7" fill="#e2d3a2" opacity="0.55"/>
+    <circle cx="10" cy="6" r="10" fill="#e2d3a2" opacity="0.45"/>
+    <circle cx="-6" cy="18" r="5" fill="#e2d3a2" opacity="0.5"/>
+    <circle cx="20" cy="-16" r="4" fill="#e2d3a2" opacity="0.4"/>
+  </g>
+
+  <!-- Soft ground silhouette for readme banner feel -->
+  <path d="M0,400 L0,330 Q 225.0,290 450.0,325 T 900.0,310 T 1275.0,340 T 1500,315 L1500,400 Z"
+        fill="#05040d" opacity="0.9"/>
+</svg>

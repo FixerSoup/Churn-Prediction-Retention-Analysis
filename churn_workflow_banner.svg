@@ -1,0 +1,800 @@
+<svg viewBox="0 0 1100 620" xmlns="http://www.w3.org/2000/svg" width="1100" height="620" style="background:#0d1117;font-family:'Segoe UI',system-ui,sans-serif;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="boxGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f6feb;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#0d419d;stop-opacity:0.15"/>
+    </linearGradient>
+    <linearGradient id="geminiGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#6d28d9;stop-opacity:0.2"/>
+    </linearGradient>
+    <linearGradient id="outputGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#065f46;stop-opacity:0.15"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1f6feb"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="personGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#38bdf8"/>
+      <stop offset="100%" style="stop-color:#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#58a6ff"/>
+      <stop offset="50%" style="stop-color:#bc8cff"/>
+      <stop offset="100%" style="stop-color:#3fb950"/>
+    </linearGradient>
+    <linearGradient id="pdfGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f87171"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    <linearGradient id="mdGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#34d399"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="diskGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="gearGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowPurple" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="bigGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Data particle marker -->
+    <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#1f6feb"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#8b5cf6"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#3fb950"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#f87171"/>
+    </marker>
+
+    <!-- Clip paths -->
+    <clipPath id="boxClip1"><rect x="230" y="160" width="190" height="220" rx="12"/></clipPath>
+    <clipPath id="boxClip2"><rect x="460" y="160" width="180" height="220" rx="12"/></clipPath>
+    <clipPath id="boxClip3"><rect x="680" y="155" width="200" height="230" rx="12"/></clipPath>
+
+    <!-- Animated dash for pipeline lines -->
+    <style>
+      @keyframes flowRight {
+        0% { stroke-dashoffset: 30; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes flowRightSlow {
+        0% { stroke-dashoffset: 40; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 0.6; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.08); }
+      }
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes spinReverse {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(-360deg); }
+      }
+      @keyframes broom {
+        0%, 100% { transform: rotate(-15deg) translateX(0px); }
+        50% { transform: rotate(15deg) translateX(8px); }
+      }
+      @keyframes throw {
+        0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 1; }
+        40% { transform: translateX(40px) translateY(-20px) rotate(20deg); opacity: 1; }
+        100% { transform: translateX(85px) translateY(5px) rotate(-10deg); opacity: 0; }
+      }
+      @keyframes throwArm {
+        0%, 100% { transform: rotate(-10deg); }
+        30% { transform: rotate(-50deg); }
+        60% { transform: rotate(20deg); }
+      }
+      @keyframes fadeInOut {
+        0%, 100% { opacity: 0.2; }
+        50% { opacity: 1; }
+      }
+      @keyframes floatUp {
+        0% { transform: translateY(0px); opacity: 1; }
+        100% { transform: translateY(-30px); opacity: 0; }
+      }
+      @keyframes scanLine {
+        0% { transform: translateY(0); opacity: 0.8; }
+        100% { transform: translateY(180px); opacity: 0; }
+      }
+      @keyframes particleFlow {
+        0% { opacity: 0; transform: translateX(0); }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { opacity: 0; transform: translateX(160px); }
+      }
+      @keyframes particleFlowDown {
+        0% { opacity: 0; transform: translateY(0px); }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { opacity: 0; transform: translateY(80px); }
+      }
+      @keyframes shimmer {
+        0% { stop-color: #1f6feb; }
+        50% { stop-color: #58a6ff; }
+        100% { stop-color: #1f6feb; }
+      }
+      @keyframes borderPulse {
+        0%, 100% { stroke-opacity: 0.6; }
+        50% { stroke-opacity: 1; }
+      }
+      @keyframes geminiPulse {
+        0%, 100% { rx: 12; fill-opacity: 0.2; }
+        50% { fill-opacity: 0.4; }
+      }
+      @keyframes diskSpin {
+        0% { transform: rotate(0deg) translateY(0); }
+        100% { transform: rotate(360deg) translateY(0); }
+      }
+      @keyframes bobble {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); }
+      }
+      @keyframes clusterSpin {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: -60; }
+      }
+      @keyframes rfBlink {
+        0%, 90%, 100% { opacity: 0.3; }
+        45% { opacity: 1; }
+      }
+      @keyframes pdfDrop {
+        0% { transform: translateY(-10px); opacity: 0; }
+        30% { opacity: 1; }
+        70% { transform: translateY(0px); opacity: 1; }
+        100% { transform: translateY(4px); opacity: 0.8; }
+      }
+      @keyframes toolGlow {
+        0%, 100% { fill-opacity: 0.15; }
+        33% { fill-opacity: 0.5; }
+      }
+      @keyframes scanPulse {
+        0%, 100% { opacity: 0; transform: scaleX(0.2); }
+        50% { opacity: 0.7; transform: scaleX(1); }
+      }
+      @keyframes starBlink {
+        0%, 100% { opacity: 0.2; transform: scale(0.8); }
+        50% { opacity: 1; transform: scale(1.2); }
+      }
+      @keyframes dataChunk {
+        0% { transform: translate(0,0) rotate(0deg); opacity:0.9; }
+        50% { transform: translate(12px, -8px) rotate(15deg); opacity: 0.6; }
+        100% { transform: translate(22px, -2px) rotate(-5deg); opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="620" fill="url(#bgGrad)"/>
+
+  <!-- Subtle grid lines -->
+  <g opacity="0.04" stroke="#58a6ff" stroke-width="0.5">
+    <line x1="0" y1="100" x2="1100" y2="100"/>
+    <line x1="0" y1="200" x2="1100" y2="200"/>
+    <line x1="0" y1="300" x2="1100" y2="300"/>
+    <line x1="0" y1="400" x2="1100" y2="400"/>
+    <line x1="0" y1="500" x2="1100" y2="500"/>
+    <line x1="100" y1="0" x2="100" y2="620"/>
+    <line x1="250" y1="0" x2="250" y2="620"/>
+    <line x1="450" y1="0" x2="450" y2="620"/>
+    <line x1="660" y1="0" x2="660" y2="620"/>
+    <line x1="880" y1="0" x2="880" y2="620"/>
+    <line x1="1000" y1="0" x2="1000" y2="620"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- TITLE SECTION -->
+  <!-- ═══════════════════════════════════════════════ -->
+
+  <!-- Title glow backdrop -->
+  <rect x="150" y="10" width="800" height="55" rx="8" fill="#1f6feb" opacity="0.04"/>
+
+  <text x="550" y="38" text-anchor="middle" font-size="20" font-weight="900" letter-spacing="2" fill="url(#titleGrad)" filter="url(#glow)">
+    ⚡ CHURN PREDICTION &amp; RETENTION ANALYSIS SYSTEM ⚡
+  </text>
+  <text x="550" y="58" text-anchor="middle" font-size="11" fill="#8b949e" letter-spacing="3">
+    RandomForest · K-Means Clustering · Gemini AI · Auto PDF Reports
+  </text>
+
+  <!-- Animated title underline -->
+  <line x1="250" y1="65" x2="850" y2="65" stroke="url(#arrowGrad)" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.6">
+    <animate attributeName="stroke-dashoffset" values="0;-24" dur="1.2s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- Stars decoration -->
+  <text x="160" y="42" font-size="14" fill="#fbbf24" filter="url(#softGlow)" style="animation: starBlink 2s ease-in-out infinite;">★</text>
+  <text x="920" y="42" font-size="14" fill="#fbbf24" filter="url(#softGlow)" style="animation: starBlink 2s ease-in-out 1s infinite;">★</text>
+  <text x="195" y="42" font-size="10" fill="#f87171" style="animation: starBlink 2s ease-in-out 0.5s infinite;">✦</text>
+  <text x="890" y="42" font-size="10" fill="#f87171" style="animation: starBlink 2s ease-in-out 1.5s infinite;">✦</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- STEP LABELS (top) -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <text x="60" y="105" text-anchor="middle" font-size="9.5" fill="#58a6ff" font-weight="700" letter-spacing="1">① INPUT</text>
+  <text x="327" y="105" text-anchor="middle" font-size="9.5" fill="#38bdf8" font-weight="700" letter-spacing="1">② PIPELINE</text>
+  <text x="551" y="105" text-anchor="middle" font-size="9.5" fill="#a78bfa" font-weight="700" letter-spacing="1">③ GEMINI AI</text>
+  <text x="781" y="105" text-anchor="middle" font-size="9.5" fill="#34d399" font-weight="700" letter-spacing="1">④ REPORTS</text>
+  <text x="1010" y="105" text-anchor="middle" font-size="9.5" fill="#fbbf24" font-weight="700" letter-spacing="1">⑤ STORAGE</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- BOX 1: PERSON + MESSY DATA (left) -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <rect x="15" y="115" width="195" height="250" rx="14" fill="#0d1117" stroke="#1f6feb" stroke-width="1.5" opacity="0.9">
+    <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="15" y="115" width="195" height="250" rx="14" fill="url(#boxGrad)" opacity="0.5"/>
+
+  <!-- Person (stick figure with color) -->
+  <!-- Head -->
+  <circle cx="80" cy="160" r="18" fill="url(#personGrad)" stroke="#38bdf8" stroke-width="1.5" filter="url(#softGlow)"/>
+  <!-- Face -->
+  <circle cx="74" cy="157" r="2.5" fill="#0d1117"/>
+  <circle cx="86" cy="157" r="2.5" fill="#0d1117"/>
+  <path d="M74,165 Q80,170 86,165" stroke="#0d1117" stroke-width="1.5" fill="none"/>
+
+  <!-- Body -->
+  <line x1="80" y1="178" x2="80" y2="220" stroke="#58a6ff" stroke-width="3" stroke-linecap="round"/>
+  <!-- Legs -->
+  <line x1="80" y1="220" x2="60" y2="248" stroke="#58a6ff" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="80" y1="220" x2="100" y2="248" stroke="#58a6ff" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Throw arm (animated) -->
+  <g transform-origin="80 190">
+    <line x1="80" y1="190" x2="115" y2="200" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" style="animation: throwArm 2s ease-in-out infinite; transform-origin: 80px 190px;"/>
+  </g>
+  <!-- Static left arm -->
+  <line x1="80" y1="190" x2="50" y2="205" stroke="#58a6ff" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Label -->
+  <text x="80" y="260" text-anchor="middle" font-size="9" fill="#38bdf8" font-weight="700">DATA ANALYST</text>
+  <text x="80" y="273" text-anchor="middle" font-size="8" fill="#8b949e">feeding raw data →</text>
+
+  <!-- MESSY DATA CHUNKS (scattered) -->
+  <!-- Chunk 1: CSV mess -->
+  <g style="animation: dataChunk 2.2s ease-in-out infinite;">
+    <rect x="112" y="172" width="32" height="20" rx="3" fill="#1f2937" stroke="#f87171" stroke-width="1"/>
+    <text x="128" y="183" text-anchor="middle" font-size="5.5" fill="#f87171">CSV??</text>
+    <text x="128" y="191" text-anchor="middle" font-size="4.5" fill="#6b7280">null,NaN,∅</text>
+  </g>
+  <!-- Chunk 2: JSON mess -->
+  <g style="animation: dataChunk 2.2s ease-in-out 0.4s infinite;">
+    <rect x="120" y="200" width="30" height="18" rx="3" fill="#1f2937" stroke="#fbbf24" stroke-width="1"/>
+    <text x="135" y="210" text-anchor="middle" font-size="5.5" fill="#fbbf24">{json}</text>
+    <text x="135" y="217" text-anchor="middle" font-size="4.5" fill="#6b7280">!mixed</text>
+  </g>
+  <!-- Chunk 3: messy numbers -->
+  <g style="animation: dataChunk 2.2s ease-in-out 0.8s infinite;">
+    <rect x="108" y="220" width="36" height="18" rx="3" fill="#1f2937" stroke="#a78bfa" stroke-width="1"/>
+    <text x="126" y="230" text-anchor="middle" font-size="5" fill="#a78bfa">??,#N/A</text>
+    <text x="126" y="237" text-anchor="middle" font-size="4.5" fill="#6b7280">dup rows</text>
+  </g>
+
+  <!-- Chaos dots -->
+  <circle cx="148" cy="185" r="2" fill="#f87171" opacity="0.8" style="animation: fadeInOut 1.5s ease infinite;"/>
+  <circle cx="155" cy="210" r="1.5" fill="#fbbf24" opacity="0.8" style="animation: fadeInOut 1.5s ease 0.5s infinite;"/>
+  <circle cx="143" cy="230" r="1.5" fill="#34d399" opacity="0.8" style="animation: fadeInOut 1.5s ease 1s infinite;"/>
+
+  <text x="107" y="345" text-anchor="middle" font-size="8" fill="#6b7280">🔴 Raw · Noisy · Unclean</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- FLOW ARROW 1: Person → Pipeline Box -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <line x1="210" y1="265" x2="228" y2="265" stroke="#1f6feb" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <!-- Animated particles on arrow 1 -->
+  <circle r="3" fill="#f87171" opacity="0.9">
+    <animateMotion path="M210,265 L228,265" dur="1.2s" repeatCount="indefinite" begin="0s"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="1.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="2.5" fill="#fbbf24" opacity="0.9">
+    <animateMotion path="M210,265 L228,265" dur="1.2s" repeatCount="indefinite" begin="0.4s"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="1.2s" repeatCount="indefinite" begin="0.4s"/>
+  </circle>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- BOX 2: PIPELINE (Gear Engine + Broom) -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <rect x="228" y="115" width="200" height="270" rx="14" fill="#0d1117" stroke="#38bdf8" stroke-width="1.5">
+    <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="228" y="115" width="200" height="270" rx="14" fill="url(#boxGrad)" opacity="0.7"/>
+
+  <!-- Box 2 Header -->
+  <rect x="228" y="115" width="200" height="32" rx="14" fill="#1f6feb" opacity="0.2"/>
+  <rect x="228" y="131" width="200" height="16" fill="#1f6feb" opacity="0.2"/>
+  <text x="328" y="136" text-anchor="middle" font-size="10" fill="#58a6ff" font-weight="800" letter-spacing="1">⚙ PROCESSING ENGINE</text>
+
+  <!-- Sub-label: Data Cleaning -->
+  <text x="328" y="160" text-anchor="middle" font-size="8.5" fill="#38bdf8" font-weight="700">[ DATA CLEANING ]</text>
+
+  <!-- BROOM ANIMATION (sweeping) -->
+  <g transform="translate(270, 175)" style="animation: broom 1.5s ease-in-out infinite; transform-origin: 30px 30px;">
+    <!-- Broom handle -->
+    <line x1="30" y1="0" x2="10" y2="50" stroke="#d97706" stroke-width="3" stroke-linecap="round"/>
+    <!-- Broom head -->
+    <path d="M2,45 Q10,60 20,48 Q10,65 3,55" fill="#fbbf24" opacity="0.9"/>
+    <line x1="2" y1="50" x2="20" y2="44" stroke="#fbbf24" stroke-width="2.5"/>
+    <!-- Bristles -->
+    <line x1="3" y1="52" x2="0" y2="62" stroke="#d97706" stroke-width="1.5"/>
+    <line x1="8" y1="54" x2="6" y2="64" stroke="#d97706" stroke-width="1.5"/>
+    <line x1="13" y1="53" x2="12" y2="63" stroke="#d97706" stroke-width="1.5"/>
+    <line x1="18" y1="50" x2="18" y2="60" stroke="#d97706" stroke-width="1.5"/>
+  </g>
+  <!-- Sweep dust particles -->
+  <circle cx="265" cy="240" r="2" fill="#6b7280" style="animation: floatUp 1.8s ease infinite 0s;"/>
+  <circle cx="275" cy="237" r="1.5" fill="#f87171" style="animation: floatUp 1.8s ease infinite 0.3s;"/>
+  <circle cx="285" cy="242" r="1.5" fill="#6b7280" style="animation: floatUp 1.8s ease infinite 0.6s;"/>
+  <text x="328" y="255" text-anchor="middle" font-size="7.5" fill="#6b7280">nulls · dupes · outliers → gone</text>
+
+  <!-- Sub-label: ML Engine -->
+  <text x="328" y="272" text-anchor="middle" font-size="8.5" fill="#60a5fa" font-weight="700">[ ML TRAINING ENGINE ]</text>
+
+  <!-- BIG GEAR (RandomForest) -->
+  <g transform="translate(298, 285)" style="animation: spin 4s linear infinite; transform-origin: 30px 30px;" filter="url(#softGlow)">
+    <circle cx="30" cy="30" r="22" fill="none" stroke="url(#gearGrad)" stroke-width="3"/>
+    <circle cx="30" cy="30" r="14" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+    <!-- Gear teeth -->
+    <rect x="27" y="2" width="6" height="10" rx="2" fill="url(#gearGrad)"/>
+    <rect x="27" y="48" width="6" height="10" rx="2" fill="url(#gearGrad)"/>
+    <rect x="2" y="27" width="10" height="6" rx="2" fill="url(#gearGrad)"/>
+    <rect x="48" y="27" width="10" height="6" rx="2" fill="url(#gearGrad)"/>
+    <rect x="10" y="10" width="8" height="6" rx="2" fill="url(#gearGrad)" transform="rotate(45,14,13)"/>
+    <rect x="42" y="42" width="8" height="6" rx="2" fill="url(#gearGrad)" transform="rotate(45,46,45)"/>
+    <rect x="42" y="10" width="8" height="6" rx="2" fill="url(#gearGrad)" transform="rotate(-45,46,13)"/>
+    <rect x="10" y="42" width="8" height="6" rx="2" fill="url(#gearGrad)" transform="rotate(-45,14,45)"/>
+    <!-- RF icon inside gear -->
+    <text x="30" y="33" text-anchor="middle" font-size="9" fill="#60a5fa" font-weight="900">RF</text>
+  </g>
+
+  <!-- Small gear (K-Means) -->
+  <g transform="translate(355, 300)" style="animation: spinReverse 3s linear infinite; transform-origin: 16px 16px;" filter="url(#softGlow)">
+    <circle cx="16" cy="16" r="12" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+    <circle cx="16" cy="16" r="7" fill="#2d1b69" stroke="#7c3aed" stroke-width="1.2"/>
+    <rect x="13" y="2" width="6" height="7" rx="1.5" fill="#8b5cf6"/>
+    <rect x="13" y="25" width="6" height="7" rx="1.5" fill="#8b5cf6"/>
+    <rect x="2" y="13" width="7" height="6" rx="1.5" fill="#8b5cf6"/>
+    <rect x="25" y="13" width="7" height="6" rx="1.5" fill="#8b5cf6"/>
+    <text x="16" y="19.5" text-anchor="middle" font-size="6.5" fill="#a78bfa" font-weight="900">KM</text>
+  </g>
+
+  <!-- Tags -->
+  <rect x="236" y="355" width="100" height="18" rx="4" fill="#1e3a5f" opacity="0.8"/>
+  <text x="286" y="367" text-anchor="middle" font-size="7.5" fill="#60a5fa">🌲 RandomForest</text>
+  <rect x="342" y="355" width="80" height="18" rx="4" fill="#2d1b69" opacity="0.8"/>
+  <text x="382" y="367" text-anchor="middle" font-size="7.5" fill="#a78bfa">⬡ K-Means</text>
+
+  <!-- scanning line effect -->
+  <rect x="228" y="115" width="200" height="4" rx="0" fill="#38bdf8" opacity="0" style="animation: scanLine 3s ease-in-out infinite; transform-origin: 228px 115px;"/>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- FLOW ARROW 2: Pipeline → Gemini -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <line x1="428" y1="265" x2="458" y2="265" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowPurple)"/>
+  <!-- Animated particles -->
+  <circle r="3" fill="#60a5fa" opacity="0.9">
+    <animateMotion path="M428,265 L458,265" dur="1s" repeatCount="indefinite" begin="0s"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="2.5" fill="#34d399" opacity="0.9">
+    <animateMotion path="M428,265 L458,265" dur="1s" repeatCount="indefinite" begin="0.35s"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="1s" repeatCount="indefinite" begin="0.35s"/>
+  </circle>
+  <text x="443" y="258" text-anchor="middle" font-size="6.5" fill="#8b5cf6">API</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- BOX 3: GEMINI AI -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <rect x="458" y="115" width="210" height="270" rx="14" fill="#0d1117" stroke="#8b5cf6" stroke-width="2">
+    <animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="458" y="115" width="210" height="270" rx="14" fill="url(#geminiGrad)" opacity="0.8"/>
+
+  <!-- Gemini header -->
+  <rect x="458" y="115" width="210" height="36" rx="14" fill="#6d28d9" opacity="0.3"/>
+  <rect x="458" y="135" width="210" height="16" fill="#6d28d9" opacity="0.3"/>
+  <text x="563" y="133" text-anchor="middle" font-size="11" fill="#c4b5fd" font-weight="900" letter-spacing="1" filter="url(#glowPurple)">✦ GEMINI AI ENGINE</text>
+  <text x="563" y="146" text-anchor="middle" font-size="8" fill="#a78bfa">via Anthropic API Calling</text>
+
+  <!-- Gemini logo-like icon -->
+  <g transform="translate(540, 155)" filter="url(#glowPurple)">
+    <ellipse cx="23" cy="18" rx="18" ry="8" fill="none" stroke="#8b5cf6" stroke-width="1.5" opacity="0.9">
+      <animate attributeName="rx" values="18;22;18" dur="2s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="23" cy="18" rx="8" ry="18" fill="none" stroke="#a78bfa" stroke-width="1.5" opacity="0.7" transform="rotate(60 23 18)">
+      <animate attributeName="ry" values="18;22;18" dur="2s" repeatCount="indefinite" begin="0.4s"/>
+    </ellipse>
+    <ellipse cx="23" cy="18" rx="8" ry="18" fill="none" stroke="#c4b5fd" stroke-width="1.5" opacity="0.5" transform="rotate(-60 23 18)">
+      <animate attributeName="ry" values="18;22;18" dur="2s" repeatCount="indefinite" begin="0.8s"/>
+    </ellipse>
+    <circle cx="23" cy="18" r="5" fill="#7c3aed" opacity="0.9"/>
+    <circle cx="23" cy="18" r="3" fill="#c4b5fd">
+      <animate attributeName="r" values="3;4.5;3" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- 3 Tool Cards -->
+  <!-- Tool 1: Churn Analysis -->
+  <rect x="468" y="210" width="188" height="42" rx="8" fill="#1a0a3d" stroke="#7c3aed" stroke-width="1">
+    <animate attributeName="fill-opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" begin="0s"/>
+  </rect>
+  <rect x="468" y="210" width="10" height="42" rx="4" fill="#7c3aed" opacity="0.8"/>
+  <text x="660" y="226" text-anchor="end" font-size="7.5" fill="#c4b5fd" font-weight="700">🔧 TOOL 1</text>
+  <text x="660" y="237" text-anchor="end" font-size="8" fill="#e9d5ff" font-weight="700">analyze_churn_factors()</text>
+  <text x="660" y="248" text-anchor="end" font-size="7" fill="#8b949e">Feature importance · SHAP scores</text>
+
+  <!-- Tool 2: Per Cluster Prediction -->
+  <rect x="468" y="258" width="188" height="42" rx="8" fill="#1a0a3d" stroke="#9333ea" stroke-width="1">
+    <animate attributeName="fill-opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" begin="1s"/>
+  </rect>
+  <rect x="468" y="258" width="10" height="42" rx="4" fill="#9333ea" opacity="0.8"/>
+  <text x="660" y="274" text-anchor="end" font-size="7.5" fill="#c4b5fd" font-weight="700">🔧 TOOL 2</text>
+  <text x="660" y="285" text-anchor="end" font-size="8" fill="#e9d5ff" font-weight="700">predict_churn_per_cluster()</text>
+  <text x="660" y="296" text-anchor="end" font-size="7" fill="#8b949e">K-Means segment risk mapping</text>
+
+  <!-- Tool 3: Individual Prediction -->
+  <rect x="468" y="306" width="188" height="42" rx="8" fill="#1a0a3d" stroke="#a855f7" stroke-width="1">
+    <animate attributeName="fill-opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" begin="2s"/>
+  </rect>
+  <rect x="468" y="306" width="10" height="42" rx="4" fill="#a855f7" opacity="0.8"/>
+  <text x="660" y="322" text-anchor="end" font-size="7.5" fill="#c4b5fd" font-weight="700">🔧 TOOL 3</text>
+  <text x="660" y="333" text-anchor="end" font-size="8" fill="#e9d5ff" font-weight="700">predict_individual_churn()</text>
+  <text x="660" y="344" text-anchor="end" font-size="7" fill="#8b949e">Per-user churn probability score</text>
+
+  <!-- Accuracy badge -->
+  <rect x="490" y="356" width="148" height="22" rx="6" fill="#064e3b" stroke="#34d399" stroke-width="1.2" opacity="0.9"/>
+  <text x="564" y="371" text-anchor="middle" font-size="8.5" fill="#34d399" font-weight="900">★ ACCURATE ANALYSIS ENGINE ★</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- FLOW ARROW 3: Gemini → Reports -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <line x1="668" y1="265" x2="698" y2="265" stroke="#3fb950" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <circle r="3" fill="#34d399" opacity="0.9">
+    <animateMotion path="M668,265 L698,265" dur="0.9s" repeatCount="indefinite" begin="0s"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="0.9s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="2.5" fill="#a78bfa" opacity="0.9">
+    <animateMotion path="M668,265 L698,265" dur="0.9s" repeatCount="indefinite" begin="0.3s"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="0.9s" repeatCount="indefinite" begin="0.3s"/>
+  </circle>
+  <text x="683" y="258" text-anchor="middle" font-size="6.5" fill="#3fb950">OUT</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- BOX 4: REPORTS (.md → .pdf) -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <rect x="698" y="115" width="220" height="270" rx="14" fill="#0d1117" stroke="#3fb950" stroke-width="1.5">
+    <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2.2s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="698" y="115" width="220" height="270" rx="14" fill="url(#outputGrad)" opacity="0.8"/>
+
+  <!-- Reports header -->
+  <rect x="698" y="115" width="220" height="35" rx="14" fill="#065f46" opacity="0.3"/>
+  <rect x="698" y="134" width="220" height="16" fill="#065f46" opacity="0.3"/>
+  <text x="808" y="132" text-anchor="middle" font-size="10" fill="#34d399" font-weight="900" letter-spacing="1">📋 REPORT GENERATOR</text>
+  <text x="808" y="145" text-anchor="middle" font-size="8" fill="#6ee7b7">Markdown → PDF Auto-Convert</text>
+
+  <!-- MD file icon 1 -->
+  <g transform="translate(715, 158)">
+    <rect x="0" y="0" width="52" height="62" rx="5" fill="#0f2922" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="36" y="0" width="16" height="16" rx="2" fill="#065f46"/>
+    <path d="M36,0 L52,16" stroke="#34d399" stroke-width="1" fill="none"/>
+    <text x="26" y="25" text-anchor="middle" font-size="8" fill="#34d399" font-weight="900">.md</text>
+    <text x="26" y="35" text-anchor="middle" font-size="5" fill="#6ee7b7">Churn</text>
+    <text x="26" y="43" text-anchor="middle" font-size="5" fill="#6ee7b7">Analysis</text>
+    <text x="26" y="51" text-anchor="middle" font-size="5" fill="#6ee7b7">Report</text>
+    <!-- Animated scan line -->
+    <rect x="3" y="0" width="46" height="3" rx="1" fill="#34d399" opacity="0.4" style="animation: scanLine 2.5s ease-in-out infinite;"/>
+  </g>
+
+  <!-- MD file icon 2 -->
+  <g transform="translate(775, 158)">
+    <rect x="0" y="0" width="52" height="62" rx="5" fill="#0f2922" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="36" y="0" width="16" height="16" rx="2" fill="#065f46"/>
+    <path d="M36,0 L52,16" stroke="#34d399" stroke-width="1" fill="none"/>
+    <text x="26" y="25" text-anchor="middle" font-size="8" fill="#34d399" font-weight="900">.md</text>
+    <text x="26" y="35" text-anchor="middle" font-size="5" fill="#6ee7b7">Cluster</text>
+    <text x="26" y="43" text-anchor="middle" font-size="5" fill="#6ee7b7">Segment</text>
+    <text x="26" y="51" text-anchor="middle" font-size="5" fill="#6ee7b7">Report</text>
+    <rect x="3" y="0" width="46" height="3" rx="1" fill="#34d399" opacity="0.4" style="animation: scanLine 2.5s ease-in-out 0.8s infinite;"/>
+  </g>
+
+  <!-- MD file icon 3 -->
+  <g transform="translate(835, 158)">
+    <rect x="0" y="0" width="52" height="62" rx="5" fill="#0f2922" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="36" y="0" width="16" height="16" rx="2" fill="#065f46"/>
+    <path d="M36,0 L52,16" stroke="#34d399" stroke-width="1" fill="none"/>
+    <text x="26" y="25" text-anchor="middle" font-size="8" fill="#34d399" font-weight="900">.md</text>
+    <text x="26" y="35" text-anchor="middle" font-size="5" fill="#6ee7b7">Individual</text>
+    <text x="26" y="43" text-anchor="middle" font-size="5" fill="#6ee7b7">Churn</text>
+    <text x="26" y="51" text-anchor="middle" font-size="5" fill="#6ee7b7">Scores</text>
+    <rect x="3" y="0" width="46" height="3" rx="1" fill="#34d399" opacity="0.4" style="animation: scanLine 2.5s ease-in-out 1.6s infinite;"/>
+  </g>
+
+  <!-- Arrow: MD → PDF conversion -->
+  <text x="808" y="237" text-anchor="middle" font-size="9" fill="#fbbf24" font-weight="700">⬇ AUTO-CONVERT ⬇</text>
+  <line x1="720" y1="244" x2="900" y2="244" stroke="#fbbf24" stroke-width="1" stroke-dasharray="4,3" opacity="0.5">
+    <animate attributeName="stroke-dashoffset" values="0;-14" dur="0.8s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- PDF file icons -->
+  <g transform="translate(730, 255)">
+    <rect x="0" y="0" width="48" height="58" rx="5" fill="#3b0a0a" stroke="#f87171" stroke-width="1.5">
+      <animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="33" y="0" width="15" height="15" rx="2" fill="#7f1d1d"/>
+    <path d="M33,0 L48,15" stroke="#f87171" stroke-width="1" fill="none"/>
+    <text x="24" y="26" text-anchor="middle" font-size="8" fill="#f87171" font-weight="900">.pdf</text>
+    <text x="24" y="37" text-anchor="middle" font-size="5" fill="#fca5a5">Churn</text>
+    <text x="24" y="45" text-anchor="middle" font-size="5" fill="#fca5a5">Analysis</text>
+    <rect x="4" y="49" width="40" height="4" rx="2" fill="#f87171" opacity="0.4"/>
+  </g>
+
+  <g transform="translate(787, 255)">
+    <rect x="0" y="0" width="48" height="58" rx="5" fill="#3b0a0a" stroke="#f87171" stroke-width="1.5">
+      <animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+    </rect>
+    <rect x="33" y="0" width="15" height="15" rx="2" fill="#7f1d1d"/>
+    <path d="M33,0 L48,15" stroke="#f87171" stroke-width="1" fill="none"/>
+    <text x="24" y="26" text-anchor="middle" font-size="8" fill="#f87171" font-weight="900">.pdf</text>
+    <text x="24" y="37" text-anchor="middle" font-size="5" fill="#fca5a5">Cluster</text>
+    <text x="24" y="45" text-anchor="middle" font-size="5" fill="#fca5a5">Segments</text>
+    <rect x="4" y="49" width="40" height="4" rx="2" fill="#f87171" opacity="0.4"/>
+  </g>
+
+  <g transform="translate(844, 255)">
+    <rect x="0" y="0" width="48" height="58" rx="5" fill="#3b0a0a" stroke="#f87171" stroke-width="1.5">
+      <animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" begin="1.2s"/>
+    </rect>
+    <rect x="33" y="0" width="15" height="15" rx="2" fill="#7f1d1d"/>
+    <path d="M33,0 L48,15" stroke="#f87171" stroke-width="1" fill="none"/>
+    <text x="24" y="26" text-anchor="middle" font-size="8" fill="#f87171" font-weight="900">.pdf</text>
+    <text x="24" y="37" text-anchor="middle" font-size="5" fill="#fca5a5">Individual</text>
+    <text x="24" y="45" text-anchor="middle" font-size="5" fill="#fca5a5">Scores</text>
+    <rect x="4" y="49" width="40" height="4" rx="2" fill="#f87171" opacity="0.4"/>
+  </g>
+
+  <!-- PDF save label -->
+  <rect x="710" y="323" width="196" height="20" rx="5" fill="#450a0a" opacity="0.7"/>
+  <text x="808" y="336" text-anchor="middle" font-size="8" fill="#f87171">💾 saved to disk automatically</text>
+
+  <!-- Reports done badge -->
+  <rect x="730" y="348" width="157" height="22" rx="6" fill="#1c3a2a" stroke="#3fb950" stroke-width="1" opacity="0.9"/>
+  <text x="808" y="363" text-anchor="middle" font-size="8" fill="#3fb950" font-weight="800">✓ HANDSOME REPORTS GENERATED</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- FLOW ARROW 4: Reports → Disk -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <line x1="918" y1="265" x2="945" y2="265" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <circle r="3" fill="#f87171" opacity="0.9">
+    <animateMotion path="M918,265 L945,265" dur="0.85s" repeatCount="indefinite" begin="0s"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="0.85s" repeatCount="indefinite"/>
+  </circle>
+  <text x="931" y="258" text-anchor="middle" font-size="6.5" fill="#fbbf24">💾</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- BOX 5: DISK STORAGE -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <rect x="945" y="115" width="145" height="270" rx="14" fill="#0d1117" stroke="#fbbf24" stroke-width="1.5">
+    <animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2.8s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="945" y="115" width="145" height="270" rx="14" fill="#1c1200" opacity="0.5"/>
+
+  <!-- Disk header -->
+  <rect x="945" y="115" width="145" height="35" rx="14" fill="#92400e" opacity="0.25"/>
+  <rect x="945" y="134" width="145" height="16" fill="#92400e" opacity="0.25"/>
+  <text x="1017" y="133" text-anchor="middle" font-size="9.5" fill="#fbbf24" font-weight="900">💾 DISK STORAGE</text>
+  <text x="1017" y="145" text-anchor="middle" font-size="8" fill="#d97706">Auto-Saved Output</text>
+
+  <!-- Hard disk illustration -->
+  <g transform="translate(969, 158)" filter="url(#softGlow)">
+    <!-- Disk body -->
+    <rect x="0" y="0" width="96" height="70" rx="8" fill="#1c1200" stroke="#d97706" stroke-width="2"/>
+    <!-- Disk platter -->
+    <ellipse cx="48" cy="35" rx="30" ry="30" fill="#0d1117" stroke="#fbbf24" stroke-width="2">
+      <animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+    </ellipse>
+    <!-- Spinning platter rings -->
+    <ellipse cx="48" cy="35" rx="22" ry="22" fill="none" stroke="#d97706" stroke-width="1" stroke-dasharray="8,4">
+      <animate attributeName="stroke-dashoffset" values="0;-24" dur="2s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="48" cy="35" rx="14" ry="14" fill="none" stroke="#fbbf24" stroke-width="1" stroke-dasharray="5,3">
+      <animate attributeName="stroke-dashoffset" values="0;16" dur="1.5s" repeatCount="indefinite"/>
+    </ellipse>
+    <!-- Center hub -->
+    <circle cx="48" cy="35" r="5" fill="#fbbf24" opacity="0.8">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Read arm -->
+    <line x1="75" y1="10" x2="52" y2="32" stroke="#d97706" stroke-width="2" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="rotate" values="-5,75,10;10,75,10;-5,75,10" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <circle cx="52" cy="32" r="3" fill="#f87171" opacity="0.9">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Status LEDs -->
+    <circle cx="8" cy="8" r="3.5" fill="#3fb950">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="0.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="18" cy="8" r="3.5" fill="#f87171">
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.1s" repeatCount="indefinite"/>
+    </circle>
+    <!-- SATA connector -->
+    <rect x="0" y="58" width="30" height="12" rx="2" fill="#374151" stroke="#6b7280" stroke-width="1"/>
+    <rect x="2" y="60" width="5" height="8" rx="1" fill="#6b7280"/>
+    <rect x="9" y="60" width="5" height="8" rx="1" fill="#6b7280"/>
+    <rect x="16" y="60" width="5" height="8" rx="1" fill="#6b7280"/>
+  </g>
+
+  <!-- Saved files list -->
+  <text x="955" y="245" font-size="7.5" fill="#d97706" font-weight="700">📁 /outputs/reports/</text>
+  <text x="960" y="259" font-size="7" fill="#6b7280">├ churn_analysis.pdf</text>
+  <text x="960" y="271" font-size="7" fill="#6b7280">├ cluster_report.pdf</text>
+  <text x="960" y="283" font-size="7" fill="#6b7280">└ individuals.pdf</text>
+
+  <!-- Save indicator -->
+  <rect x="955" y="295" width="125" height="16" rx="4" fill="#0d2111" stroke="#3fb950" stroke-width="0.8"/>
+  <text x="1017" y="306" text-anchor="middle" font-size="7" fill="#3fb950">● WRITE COMPLETE</text>
+
+  <!-- Storage size badge -->
+  <rect x="968" y="318" width="100" height="18" rx="5" fill="#1c1200" stroke="#fbbf24" stroke-width="0.8"/>
+  <text x="1018" y="330" text-anchor="middle" font-size="7.5" fill="#fbbf24">3 PDFs · Auto-saved ✓</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- BOTTOM FEATURE BADGES -->
+  <!-- ═══════════════════════════════════════════════ -->
+
+  <!-- Section divider -->
+  <line x1="30" y1="400" x2="1070" y2="400" stroke="#21262d" stroke-width="1.5"/>
+
+  <!-- Feature row header -->
+  <text x="550" y="418" text-anchor="middle" font-size="9" fill="#8b949e" letter-spacing="2" font-weight="600">⬥ KEY FEATURES &amp; CAPABILITIES ⬥</text>
+
+  <!-- Feature badge 1: Accurate Analysis -->
+  <rect x="30" y="428" width="160" height="55" rx="10" fill="#0d1117" stroke="#3fb950" stroke-width="1.5" opacity="0.9"/>
+  <rect x="30" y="428" width="160" height="55" rx="10" fill="#065f46" opacity="0.1"/>
+  <text x="110" y="448" text-anchor="middle" font-size="10" fill="#34d399">★ Accurate Analysis</text>
+  <text x="110" y="461" text-anchor="middle" font-size="7.5" fill="#6ee7b7">Precision · Recall · F1-score</text>
+  <text x="110" y="474" text-anchor="middle" font-size="7" fill="#8b949e">Trained on balanced datasets</text>
+
+  <!-- Feature badge 2: RandomForest -->
+  <rect x="205" y="428" width="175" height="55" rx="10" fill="#0d1117" stroke="#3b82f6" stroke-width="1.5" opacity="0.9"/>
+  <rect x="205" y="428" width="175" height="55" rx="10" fill="#1e3a5f" opacity="0.15"/>
+  <text x="292" y="445" text-anchor="middle" font-size="9.5" fill="#60a5fa">🌲 RandomForestClassifier</text>
+  <text x="292" y="458" text-anchor="middle" font-size="7.5" fill="#93c5fd">ML model for churn prediction</text>
+  <text x="292" y="471" text-anchor="middle" font-size="7" fill="#8b949e">Ensemble · Overfitting resistant</text>
+  <!-- Gear spin on this badge -->
+  <g transform="translate(286, 477)" style="animation: spin 3s linear infinite; transform-origin: 6px 6px;" opacity="0.5">
+    <circle cx="6" cy="6" r="5" fill="none" stroke="#3b82f6" stroke-width="1"/>
+    <rect x="4.5" y="0" width="3" height="3" rx="0.5" fill="#3b82f6"/>
+    <rect x="4.5" y="9" width="3" height="3" rx="0.5" fill="#3b82f6"/>
+    <rect x="0" y="4.5" width="3" height="3" rx="0.5" fill="#3b82f6"/>
+    <rect x="9" y="4.5" width="3" height="3" rx="0.5" fill="#3b82f6"/>
+  </g>
+
+  <!-- Feature badge 3: K-Means -->
+  <rect x="395" y="428" width="165" height="55" rx="10" fill="#0d1117" stroke="#8b5cf6" stroke-width="1.5" opacity="0.9"/>
+  <rect x="395" y="428" width="165" height="55" rx="10" fill="#2d1b69" opacity="0.12"/>
+  <text x="477" y="445" text-anchor="middle" font-size="9.5" fill="#a78bfa">⬡ K-Means Clustering</text>
+  <text x="477" y="458" text-anchor="middle" font-size="7.5" fill="#c4b5fd">Customer segmentation engine</text>
+  <text x="477" y="471" text-anchor="middle" font-size="7" fill="#8b949e">Purchase patterns · Habits · Behaviour</text>
+
+  <!-- Feature badge 4: Gemini 3 Tools -->
+  <rect x="575" y="428" width="170" height="55" rx="10" fill="#0d1117" stroke="#a78bfa" stroke-width="1.5" opacity="0.9"/>
+  <rect x="575" y="428" width="170" height="55" rx="10" fill="#4c1d95" opacity="0.1"/>
+  <text x="660" y="445" text-anchor="middle" font-size="9.5" fill="#c4b5fd">✦ Gemini AI · 3 Tools</text>
+  <text x="660" y="458" text-anchor="middle" font-size="7.5" fill="#e9d5ff">Analysis · Cluster · Individual</text>
+  <text x="660" y="471" text-anchor="middle" font-size="7" fill="#8b949e">API-powered intelligent reporting</text>
+
+  <!-- Feature badge 5: Auto PDF -->
+  <rect x="760" y="428" width="160" height="55" rx="10" fill="#0d1117" stroke="#f87171" stroke-width="1.5" opacity="0.9"/>
+  <rect x="760" y="428" width="160" height="55" rx="10" fill="#450a0a" opacity="0.12"/>
+  <text x="840" y="445" text-anchor="middle" font-size="9.5" fill="#f87171">📄 Auto PDF Export</text>
+  <text x="840" y="458" text-anchor="middle" font-size="7.5" fill="#fca5a5">Markdown → PDF pipeline</text>
+  <text x="840" y="471" text-anchor="middle" font-size="7" fill="#8b949e">Auto-saved · Zero manual steps</text>
+
+  <!-- Feature badge 6: End-to-End -->
+  <rect x="935" y="428" width="155" height="55" rx="10" fill="#0d1117" stroke="#fbbf24" stroke-width="1.5" opacity="0.9"/>
+  <rect x="935" y="428" width="155" height="55" rx="10" fill="#1c1200" opacity="0.15"/>
+  <text x="1012" y="445" text-anchor="middle" font-size="9.5" fill="#fbbf24">⚡ End-to-End</text>
+  <text x="1012" y="458" text-anchor="middle" font-size="7.5" fill="#fde68a">Fully automated pipeline</text>
+  <text x="1012" y="471" text-anchor="middle" font-size="7" fill="#8b949e">Data in → PDF out, zero touch</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- BOTTOM FOOTER PIPELINE VISUAL -->
+  <!-- ═══════════════════════════════════════════════ -->
+
+  <!-- Mini pipeline flow line at bottom -->
+  <g transform="translate(0, 500)">
+    <!-- Timeline line -->
+    <line x1="50" y1="40" x2="1050" y2="40" stroke="#21262d" stroke-width="2"/>
+
+    <!-- Step dots -->
+    <circle cx="110" cy="40" r="8" fill="#1f6feb" opacity="0.9" filter="url(#softGlow)">
+      <animate attributeName="r" values="7;10;7" dur="2s" repeatCount="indefinite" begin="0s"/>
+    </circle>
+    <circle cx="280" cy="40" r="8" fill="#38bdf8" opacity="0.9" filter="url(#softGlow)">
+      <animate attributeName="r" values="7;10;7" dur="2s" repeatCount="indefinite" begin="0.4s"/>
+    </circle>
+    <circle cx="460" cy="40" r="8" fill="#8b5cf6" opacity="0.9" filter="url(#softGlow)">
+      <animate attributeName="r" values="7;10;7" dur="2s" repeatCount="indefinite" begin="0.8s"/>
+    </circle>
+    <circle cx="660" cy="40" r="8" fill="#3fb950" opacity="0.9" filter="url(#softGlow)">
+      <animate attributeName="r" values="7;10;7" dur="2s" repeatCount="indefinite" begin="1.2s"/>
+    </circle>
+    <circle cx="840" cy="40" r="8" fill="#f87171" opacity="0.9" filter="url(#softGlow)">
+      <animate attributeName="r" values="7;10;7" dur="2s" repeatCount="indefinite" begin="1.6s"/>
+    </circle>
+    <circle cx="990" cy="40" r="8" fill="#fbbf24" opacity="0.9" filter="url(#softGlow)">
+      <animate attributeName="r" values="7;10;7" dur="2s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+
+    <!-- Labels -->
+    <text x="110" y="60" text-anchor="middle" font-size="7.5" fill="#58a6ff">Raw Data</text>
+    <text x="280" y="60" text-anchor="middle" font-size="7.5" fill="#38bdf8">Clean+Train</text>
+    <text x="460" y="60" text-anchor="middle" font-size="7.5" fill="#a78bfa">Gemini AI</text>
+    <text x="660" y="60" text-anchor="middle" font-size="7.5" fill="#34d399">MD Reports</text>
+    <text x="840" y="60" text-anchor="middle" font-size="7.5" fill="#f87171">PDF Convert</text>
+    <text x="990" y="60" text-anchor="middle" font-size="7.5" fill="#fbbf24">Saved 💾</text>
+
+    <!-- Flowing dot on timeline -->
+    <circle r="5" fill="white" opacity="0.8" filter="url(#softGlow)">
+      <animateMotion path="M50,40 L1050,40" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Footer text -->
+    <text x="550" y="85" text-anchor="middle" font-size="8.5" fill="#6b7280" letter-spacing="1">
+      Built with Python · scikit-learn · google-generativeai · matplotlib · weasyprint · pandas
+    </text>
+    <text x="550" y="100" text-anchor="middle" font-size="8" fill="#484f58" letter-spacing="0.5">
+      © Churn Prediction &amp; Retention Analysis System — Open Source
+    </text>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- AMBIENT FLOATING PARTICLES (background) -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <circle cx="200" cy="80" r="1.5" fill="#1f6feb" opacity="0.4" style="animation: fadeInOut 3s ease infinite 0s;"/>
+  <circle cx="400" cy="90" r="1" fill="#8b5cf6" opacity="0.4" style="animation: fadeInOut 3s ease infinite 0.5s;"/>
+  <circle cx="600" cy="80" r="1.5" fill="#3fb950" opacity="0.4" style="animation: fadeInOut 3s ease infinite 1s;"/>
+  <circle cx="800" cy="90" r="1" fill="#f87171" opacity="0.4" style="animation: fadeInOut 3s ease infinite 1.5s;"/>
+  <circle cx="1000" cy="80" r="1.5" fill="#fbbf24" opacity="0.4" style="animation: fadeInOut 3s ease infinite 2s;"/>
+
+  <!-- Corner accents -->
+  <rect x="0" y="0" width="3" height="620" fill="url(#arrowGrad)" opacity="0.5"/>
+  <rect x="1097" y="0" width="3" height="620" fill="url(#arrowGrad)" opacity="0.5"/>
+  <rect x="0" y="0" width="1100" height="3" fill="url(#arrowGrad)" opacity="0.5"/>
+  <rect x="0" y="617" width="1100" height="3" fill="url(#arrowGrad)" opacity="0.5"/>
+</svg>

@@ -1,0 +1,5 @@
+cluster,total_customers,churned_customers,churn_rate_%,stay_rate_%,risk_category
+1,15315,9860.0,64.38,35.62,Risky
+0,12390,7433.0,59.99,40.01,Medium Risk
+2,3761,2145.0,57.03,42.97,Medium Risk
+3,5526,1330.0,24.07,75.93,Lower Risk

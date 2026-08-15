@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 220" width="1000" height="220">
+  <defs>
+    <!-- Background -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1120"/>
+      <stop offset="100%" stop-color="#1a1c3a"/>
+    </linearGradient>
+
+    <!-- Animated text gradient -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7dd3fc">
+        <animate attributeName="stop-color"
+          values="#7dd3fc;#a78bfa;#f472b6;#7dd3fc"
+          dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#a78bfa">
+        <animate attributeName="stop-color"
+          values="#a78bfa;#f472b6;#7dd3fc;#a78bfa"
+          dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#f472b6">
+        <animate attributeName="stop-color"
+          values="#f472b6;#7dd3fc;#a78bfa;#f472b6"
+          dur="6s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Soft glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Clip path that reveals the text like it's being written -->
+    <clipPath id="revealClip">
+      <rect id="revealRect" x="0" y="0" width="0" height="220">
+        <animate id="growAnim"
+          attributeName="width"
+          values="0;0;980;980;0;0"
+          keyTimes="0;0.02;0.55;0.72;0.98;1"
+          keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0 0 1 1;0.42 0 0.58 1;0 0 1 1"
+          calcMode="spline"
+          dur="8s"
+          repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+  </defs>
+
+  <!-- Background panel -->
+  <rect x="0" y="0" width="1000" height="220" rx="18" fill="url(#bgGrad)"/>
+
+  <!-- Decorative faint grid dots for depth -->
+  <g opacity="0.08">
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#ffffff"/>
+    </pattern>
+    <rect x="0" y="0" width="1000" height="220" fill="url(#dots)"/>
+  </g>
+
+  <!-- The written text, revealed via clip-path -->
+  <g clip-path="url(#revealClip)">
+    <text x="40" y="100"
+          font-family="'Segoe Script','Brush Script MT','Comic Sans MS',cursive"
+          font-size="46"
+          fill="url(#textGrad)"
+          filter="url(#glow)">
+      Churn Prediction
+    </text>
+    <text x="40" y="165"
+          font-family="'Segoe Script','Brush Script MT','Comic Sans MS',cursive"
+          font-size="46"
+          fill="url(#textGrad)"
+          filter="url(#glow)">
+      And Retention Analysis
+    </text>
+  </g>
+
+  <!-- Animated "pen tip" cursor that travels with the reveal -->
+  <circle r="6" fill="#fef3c7" filter="url(#glow)">
+    <animateMotion dur="8s" repeatCount="indefinite"
+      keyPoints="0;0;1;1;0;0"
+      keyTimes="0;0.02;0.55;0.72;0.98;1"
+      calcMode="linear"
+      path="M40,90 L1000,90"/>
+    <animate attributeName="opacity"
+      values="1;1;1;0;0;1"
+      keyTimes="0;0.02;0.55;0.6;0.98;1"
+      dur="8s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- second pen tip for the lower line, active during the second half of the write phase -->
+  <circle r="6" fill="#fef3c7" filter="url(#glow)" opacity="0">
+    <animateMotion dur="8s" repeatCount="indefinite"
+      keyPoints="0;0;1;1;0;0"
+      keyTimes="0;0.28;0.55;0.72;0.98;1"
+      calcMode="linear"
+      path="M40,155 L1000,155"/>
+    <animate attributeName="opacity"
+      values="0;0;1;1;0;0;0"
+      keyTimes="0;0.28;0.30;0.55;0.6;0.98;1"
+      dur="8s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- subtle border -->
+  <rect x="2" y="2" width="996" height="216" rx="16" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2"/>
+</svg>

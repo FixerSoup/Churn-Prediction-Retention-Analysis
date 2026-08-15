@@ -1,0 +1,194 @@
+{
+  "0": {
+    "cluster_id": 0,
+    "total_customers": 12390,
+    "churned_customers": 7433,
+    "churn_rate_pct": 59.99,
+    "top_churn_drivers": [
+      {
+        "feature": "churn_risk_score",
+        "type": "numeric",
+        "churned_avg": 1.0,
+        "stayed_avg": 0.0,
+        "effect_size": 2.041,
+        "direction": "higher in churners"
+      },
+      {
+        "feature": "points_in_wallet",
+        "type": "numeric",
+        "churned_avg": 624.95,
+        "stayed_avg": 723.81,
+        "effect_size": 0.575,
+        "direction": "lower in churners"
+      },
+      {
+        "feature": "membership_category",
+        "type": "categorical",
+        "dominant_value": "Basic Membership",
+        "pct_among_churners": 37.71,
+        "pct_among_stayers": 1.78,
+        "effect_size": 0.359
+      },
+      {
+        "feature": "avg_frequency_login_days",
+        "type": "numeric",
+        "churned_avg": 17.92,
+        "stayed_avg": 16.92,
+        "effect_size": 0.119,
+        "direction": "higher in churners"
+      },
+      {
+        "feature": "avg_transaction_value",
+        "type": "numeric",
+        "churned_avg": 23876.09,
+        "stayed_avg": 22976.98,
+        "effect_size": 0.066,
+        "direction": "higher in churners"
+      }
+    ]
+  },
+  "1": {
+    "cluster_id": 1,
+    "total_customers": 15315,
+    "churned_customers": 9860,
+    "churn_rate_pct": 64.38,
+    "top_churn_drivers": [
+      {
+        "feature": "churn_risk_score",
+        "type": "numeric",
+        "churned_avg": 1.0,
+        "stayed_avg": 0.0,
+        "effect_size": 2.088,
+        "direction": "higher in churners"
+      },
+      {
+        "feature": "points_in_wallet",
+        "type": "numeric",
+        "churned_avg": 638.79,
+        "stayed_avg": 725.45,
+        "effect_size": 0.532,
+        "direction": "lower in churners"
+      },
+      {
+        "feature": "age",
+        "type": "numeric",
+        "churned_avg": 26.09,
+        "stayed_avg": 23.18,
+        "effect_size": 0.325,
+        "direction": "higher in churners"
+      },
+      {
+        "feature": "membership_category",
+        "type": "categorical",
+        "dominant_value": "No Membership",
+        "pct_among_churners": 31.05,
+        "pct_among_stayers": 1.52,
+        "effect_size": 0.295
+      },
+      {
+        "feature": "avg_time_spent",
+        "type": "numeric",
+        "churned_avg": 152.34,
+        "stayed_avg": 190.82,
+        "effect_size": 0.245,
+        "direction": "lower in churners"
+      }
+    ]
+  },
+  "2": {
+    "cluster_id": 2,
+    "total_customers": 3761,
+    "churned_customers": 2145,
+    "churn_rate_pct": 57.03,
+    "top_churn_drivers": [
+      {
+        "feature": "churn_risk_score",
+        "type": "numeric",
+        "churned_avg": 1.0,
+        "stayed_avg": 0.0,
+        "effect_size": 2.02,
+        "direction": "higher in churners"
+      },
+      {
+        "feature": "points_in_wallet",
+        "type": "numeric",
+        "churned_avg": 633.49,
+        "stayed_avg": 735.25,
+        "effect_size": 0.561,
+        "direction": "lower in churners"
+      },
+      {
+        "feature": "membership_category",
+        "type": "categorical",
+        "dominant_value": "Basic Membership",
+        "pct_among_churners": 37.62,
+        "pct_among_stayers": 1.61,
+        "effect_size": 0.36
+      },
+      {
+        "feature": "avg_transaction_value",
+        "type": "numeric",
+        "churned_avg": 25852.87,
+        "stayed_avg": 30740.44,
+        "effect_size": 0.292,
+        "direction": "lower in churners"
+      },
+      {
+        "feature": "avg_frequency_login_days",
+        "type": "numeric",
+        "churned_avg": 17.45,
+        "stayed_avg": 15.49,
+        "effect_size": 0.218,
+        "direction": "higher in churners"
+      }
+    ]
+  },
+  "3": {
+    "cluster_id": 3,
+    "total_customers": 5526,
+    "churned_customers": 1330,
+    "churn_rate_pct": 24.07,
+    "top_churn_drivers": [
+      {
+        "feature": "churn_risk_score",
+        "type": "numeric",
+        "churned_avg": 1.0,
+        "stayed_avg": 0.0,
+        "effect_size": 2.339,
+        "direction": "higher in churners"
+      },
+      {
+        "feature": "avg_transaction_value",
+        "type": "numeric",
+        "churned_avg": 41024.52,
+        "stayed_avg": 61526.52,
+        "effect_size": 0.977,
+        "direction": "lower in churners"
+      },
+      {
+        "feature": "membership_category",
+        "type": "categorical",
+        "dominant_value": "No Membership",
+        "pct_among_churners": 35.86,
+        "pct_among_stayers": 0.48,
+        "effect_size": 0.354
+      },
+      {
+        "feature": "avg_frequency_login_days",
+        "type": "numeric",
+        "churned_avg": 6.46,
+        "stayed_avg": 8.49,
+        "effect_size": 0.238,
+        "direction": "lower in churners"
+      },
+      {
+        "feature": "feedback",
+        "type": "categorical",
+        "dominant_value": "User Friendly Website",
+        "pct_among_churners": 0,
+        "pct_among_stayers": 18.68,
+        "effect_size": 0.187
+      }
+    ]
+  }
+}

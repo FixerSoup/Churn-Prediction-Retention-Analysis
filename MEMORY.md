@@ -1,0 +1,1 @@
+- [Session run instructions](.claude/projects/D--Customer-Segmntation-and-retention-analysis/memory/session-run-instructions.md) — hook
