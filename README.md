@@ -1,5 +1,11 @@
 # Customer Segmentation & Churn Prediction
 
+![Churn Workflow Banner](churn_workflow_banner.svg)
+
+![Churn Prediction Animation](churn_prediction_animation.svg)
+
+![Space README Banner](space_readme_banner.svg)
+
 A focused project that segments customers, predicts churn, and lets you ask questions in plain English.
 
 ## What it does
@@ -44,6 +50,8 @@ If you do not have a subscription and want to use the agent for free, follow the
 3. Launch the agent (or demo)  
    ```bash
    python scripts/tool_develop.py   # interactive console
+   # or
+   python gradio/app.py             # Gradio web UI
    ```
 
 ## Files you’ll see
@@ -53,13 +61,6 @@ If you do not have a subscription and want to use the agent for free, follow the
 - `scripts/` – training (`train_model.py`), agent (`tool_develop.py`), utilities.
 - `notebooks/` – exploratory work (EDA, clustering, RFM).
 - `gradio/` – simple web interface.
-You can view them inline below:
-
-![Churn Workflow Banner](churn_workflow_banner.svg)
-
-![Churn Prediction Animation](churn_prediction_animation.svg)
-
-![Space README Banner](space_readme_banner.svg)
 
 ## Claude Code Skills
 The project includes custom Claude Code skills to streamline common tasks:
