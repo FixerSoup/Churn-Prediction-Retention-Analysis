@@ -88,7 +88,7 @@ A focused project that segments customers, predicts churn, and lets you ask ques
    ```
 8. To save the report as a pdf file
 ```
-python save_to_pdf.py
+python scripts/save_to_pdf.py
 ```
 
 ## **Unique Feature of the project**
