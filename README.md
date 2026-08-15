@@ -88,9 +88,9 @@ A focused project that segments customers, predicts churn, and lets you ask ques
    python scripts/run_agent.py
    ```
 8. To save the report as a pdf file
-```
-python scripts/save_to_pdf.py
-```
+   ```
+   python scripts/save_to_pdf.py
+   ```
 ## Some Examples for Prompts
 ```
 1. Churn Rate Overview: "Calculate the overall churn rate and show monthly churn trends over the past 6 months. Include a simple line chart visualization."
