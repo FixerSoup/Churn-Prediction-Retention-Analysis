@@ -24,9 +24,9 @@ A focused project that segments customers, predicts churn, and lets you ask ques
 - **Probability**: Estimated chance of churn (0 = never, 1 = certain).
 
 ## Prerequisites
-- **Ollama** installed locally (to run local models if needed)(Optional)
-- A **GEMINI API KEY** set in a `.env` variable `GEMINI_API_KEY`(MUST)
-- Access to a free open cloud model such as **nemotron-3-super:cloud** (ensure it’s available in your model provider)(Optional)
+- **Ollama** installed locally (to run local models if needed)
+- A **GEMINI API KEY** set in a `.env` variable `GEMINI_API_KEY`
+- Access to a free open cloud model such as **nemotron-3-super:cloud** (ensure it’s available in your model provider)
 
 ## Claude Code Subscription Note
 If you already have a Claude Code subscription, you can use the agent directly without additional setup.  
@@ -54,6 +54,22 @@ If you do not have a subscription and want to use the agent for free, follow the
 - `models/` – trained model and Gemini‑generated reports.
 - `scripts/` – training (`train_model.py`), agent (`tool_develop.py`), utilities.
 - `notebooks/` – exploratory work (EDA, clustering, RFM).
+- `gradio/` – simple web interface.
+
+## Visual Animations (SVG)
+The repository includes SVG animation files that illustrate key workflows and concepts. GitHub renders SVGs directly in the README.
+
+- **churn_workflow_banner.svg** – Banner showing the end‑to‑end churn prediction workflow.
+- **churn_prediction_animation.svg** – Animated diagram of how a customer’s features flow through the model to produce a churn probability.
+- **space_readme_banner.svg** – Decorative banner with a space theme (optional visual flair).
+
+You can view them inline below:
+
+![Churn Workflow Banner](churn_workflow_banner.svg)
+
+![Churn Prediction Animation](churn_prediction_animation.svg)
+
+![Space README Banner](space_readme_banner.svg)
 
 ## Claude Code Skills
 The project includes custom Claude Code skills to streamline common tasks:
