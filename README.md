@@ -38,6 +38,7 @@ A focused project that segments customers, predicts churn, and lets you ask ques
 - **Random Forest** for Churn Prediction 
 - **K Means Clustering** for Retention and segmentation of customers
 - Simple, dependency‑light setup (see `requirements.txt`).
+- RFM Analysis, Clustering i.e segmenting customers based on top 5 features
 - Provide robust analysis and precise overview with prediction features
 - [Visual Mind Maps for easy understanding of the flow of execution](https://github.com/FixerSoup/Churn-Prediction-Retention-Analysis/tree/main/visual%20mindmaps%20for%20easy%20understanding)
 
@@ -122,7 +123,7 @@ python scripts/run_agent.py
 That’s it—short, churn‑focused, and ready to use.
 
 ## License
-- Do not copy paste and use this repo ❌
+- Do not Copy paste and publish the repo as your own work ⚠️ ❌
 - Use it as a branch/feature extension for your own churn systems ✅
 
 - A star is always appreciated if it helps you ⭐
