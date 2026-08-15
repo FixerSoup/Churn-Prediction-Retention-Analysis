@@ -10,7 +10,6 @@ A focused project that segments customers, predicts churn, and lets you ask ques
 
 ## Target Users
 - Beginner Data Analysts,Scientists to use this repo to create/build their own churn prediction and retention **system** as per requirement from a static one.
-- Provide robust analysis and precise overview with prediction features.
 
 ## Dataset Used
 - [**d0r1h/customer_churn**](https://huggingface.co/datasets/d0r1h/customer_churn)
@@ -35,8 +34,9 @@ A focused project that segments customers, predicts churn, and lets you ask ques
 
 ## Key features
 - End‑to‑end pipeline: data → model → insights -> report
-- Uses the trained model both for segment summaries and real‑time individual predictions.
+- Uses the trained model (Random Forest for Churn Prediction and K Means Clustering for Retention and segmentation) both for segment summaries and real‑time individual predictions.
 - Simple, dependency‑light setup (see `requirements.txt`).
+- Provide robust analysis and precise overview with prediction features.
 
 ## Basic terms (short & precise)
 - **Churn**: Customer leaves or stops using the service.
@@ -46,8 +46,8 @@ A focused project that segments customers, predicts churn, and lets you ask ques
 - **Probability**: Estimated chance of churn (0 = never, 1 = certain).
 
 ## Claude Code Subscription Note
-If you already have a Claude Code subscription, you can use the agent directly without additional setup.  
-If you do not have a subscription and want to use the agent for free, follow the prerequisites and steps above.
+- If you already have a Claude Code subscription, you can use the agent directly without additional setup.  
+- If you do not have a subscription and want to use the agent for free, follow the prerequisites and steps above.
 
 ## How to run via powershell
 1. Clone Repo
@@ -81,7 +81,7 @@ If you do not have a subscription and want to use the agent for free, follow the
    ```
 7. Launch the agent (or demo)  
    ```bash
-   python scripts/run_agent.py   # interactive console
+   python scripts/run_agent.py
    ```
 8. To save the report as a pdf file
 ```
@@ -108,7 +108,6 @@ You can use these skills to integrate these stuffs to your project with claude c
 ```
 python scripts/run_agent.py
 ```
-
 That’s it—short, churn‑focused, and ready to use.
 
 ## License
