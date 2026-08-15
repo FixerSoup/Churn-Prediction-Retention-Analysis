@@ -34,7 +34,9 @@ A focused project that segments customers, predicts churn, and lets you ask ques
 
 ## Key features
 - End‑to‑end pipeline: data → model → insights -> report
-- Uses the trained model (Random Forest for Churn Prediction and K Means Clustering for Retention and segmentation) both for segment summaries and real‑time individual predictions.
+- Used machine learning algorithms 
+- **Random Forest** for Churn Prediction 
+- **K Means Clustering** for Retention and segmentation of customers
 - Simple, dependency‑light setup (see `requirements.txt`).
 - Provide robust analysis and precise overview with prediction features.
 
