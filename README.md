@@ -30,9 +30,9 @@ A focused project that segments customers, predicts churn, and lets you ask ques
 - **Probability**: Estimated chance of churn (0 = never, 1 = certain).
 
 ## Prerequisites
-- **Ollama** installed locally (to run local models if needed)
-- A **GEMINI API KEY** set in a `.env` variable `GEMINI_API_KEY`
-- Access to a free open cloud model such as **nemotron-3-super:cloud** (ensure it’s available in your model provider)
+- **Ollama** installed locally (to run local models if needed)[Optional]
+- A **GEMINI API KEY** set in a `.env` variable `GEMINI_API_KEY`[MUST]
+- Access to a free open cloud model such as **nemotron-3-super:cloud** (ensure it’s available in your model provider)[Optional]
 
 ## Claude Code Subscription Note
 If you already have a Claude Code subscription, you can use the agent directly without additional setup.  
