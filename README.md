@@ -39,7 +39,7 @@ A focused project that segments customers, predicts churn, and lets you ask ques
 - **K Means Clustering** for Retention and segmentation of customers
 - Simple, dependency‑light setup (see `requirements.txt`).
 - Provide robust analysis and precise overview with prediction features
-- Contains Visual Mind Maps for easy understanding of the flow of execution
+- [Visual Mind Maps for easy understanding of the flow of execution](https://github.com/FixerSoup/Churn-Prediction-Retention-Analysis/tree/main/visual%20mindmaps%20for%20easy%20understanding)
 
 ## Basic terms (short & precise)
 - **Churn**: Customer leaves or stops using the service.
