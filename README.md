@@ -1,10 +1,10 @@
 # Customer Segmentation & Churn Prediction
 
-![Churn Workflow Banner](churn_workflow_banner.svg)
+![Space README Banner](space_readme_banner.svg)
 
 ![Churn Prediction Animation](churn_prediction_animation.svg)
 
-![Space README Banner](space_readme_banner.svg)
+![Churn Workflow Banner](churn_workflow_banner.svg)
 
 A focused project that segments customers, predicts churn, and lets you ask questions in plain English.
 
