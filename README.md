@@ -44,8 +44,6 @@ If you do not have a subscription and want to use the agent for free, follow the
 3. Launch the agent (or demo)  
    ```bash
    python scripts/tool_develop.py   # interactive console
-   # or
-   python gradio/app.py             # Gradio web UI
    ```
 
 ## Files you’ll see
