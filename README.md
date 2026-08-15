@@ -38,7 +38,8 @@ A focused project that segments customers, predicts churn, and lets you ask ques
 - **Random Forest** for Churn Prediction 
 - **K Means Clustering** for Retention and segmentation of customers
 - Simple, dependency‑light setup (see `requirements.txt`).
-- Provide robust analysis and precise overview with prediction features.
+- Provide robust analysis and precise overview with prediction features
+- Contains Visual Mind Maps for easy understanding of the flow of execution
 
 ## Basic terms (short & precise)
 - **Churn**: Customer leaves or stops using the service.
