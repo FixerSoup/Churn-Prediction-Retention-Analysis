@@ -8,6 +8,15 @@
 
 A focused project that segments customers, predicts churn, and lets you ask questions in plain English.
 
+## Target Users : 
+- Beginner Data Analysts,Scientists to use this repo to create/build their own churn prediction and retention **system** as per requirement from a static one.
+- Provide robust analysis and precise overview with prediction features.
+
+## Prerequisites
+- **Ollama** installed locally (to run local models if needed)[Optional]
+- A **GEMINI API KEY** set in a `.env` variable `GEMINI_API_KEY`[MUST]
+- Access to a free open cloud model such as **nemotron-3-super:cloud** (ensure it’s available in your model provider)[Optional]
+
 ## What it does
 - **Cleans & engineers features** from raw data (RFM, login, transaction stats).
 - **Trains a churn prediction model** (RandomForest pipeline) saved as `models/churn_prediction_pipeline.pkl`.
@@ -18,7 +27,7 @@ A focused project that segments customers, predicts churn, and lets you ask ques
 - **Includes a Gradio demo** for quick interaction.
 
 ## Key features
-- End‑to‑end pipeline: data → model → insights → natural‑language Q&A.
+- End‑to‑end pipeline: data → model → insights -> report
 - Uses the trained model both for segment summaries and real‑time individual predictions.
 - Simple, dependency‑light setup (see `requirements.txt`).
 
@@ -29,16 +38,12 @@ A focused project that segments customers, predicts churn, and lets you ask ques
 - **Model**: Algorithm that learns patterns to predict churn.
 - **Probability**: Estimated chance of churn (0 = never, 1 = certain).
 
-## Prerequisites
-- **Ollama** installed locally (to run local models if needed)[Optional]
-- A **GEMINI API KEY** set in a `.env` variable `GEMINI_API_KEY`[MUST]
-- Access to a free open cloud model such as **nemotron-3-super:cloud** (ensure it’s available in your model provider)[Optional]
-
 ## Claude Code Subscription Note
 If you already have a Claude Code subscription, you can use the agent directly without additional setup.  
 If you do not have a subscription and want to use the agent for free, follow the prerequisites and steps above.
 
 ## How to run
+## Option 1:
 1. Install dependencies  
    ```bash
    pip install -r requirements.txt
@@ -50,9 +55,19 @@ If you do not have a subscription and want to use the agent for free, follow the
 3. Launch the agent (or demo)  
    ```bash
    python scripts/tool_develop.py   # interactive console
-   # or
-   python gradio/app.py             # Gradio web UI
    ```
+
+## **Unique Feature of the project**
+## Option 2: 
+- Run it using claude code CLI by simple commands
+- Clone the Repo 
+```
+https://github.com/FixerSoup/Churn-Prediction-Retention-Analysis.git
+```
+- Open the project root folder
+- activate the Virtual Environment 
+- run Claude code CLI or ollama
+- enter run the project for me
 
 ## Files you’ll see
 - `data/raw_data/` – original CSV (untouched).
@@ -85,3 +100,7 @@ python scripts/run_agent.py
 Then, when prompted, ask for a churn report (e.g., “Generate a detailed churn report that includes an executive summary, segmentation analysis, churn drivers per cluster, model performance, feature importance, and retention recommendations.”).
 
 That’s it—short, churn‑focused, and ready to use.
+
+## License
+- Do not copy paste and use this repo ⚠️
+- Use it as a branch/feature extension for your own churn systems ✅
