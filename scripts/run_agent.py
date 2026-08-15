@@ -7,7 +7,7 @@ import numpy as np
 from  google import genai
 import os
 from datetime import datetime
-
+import uuid
 
 
 script = Path(__file__).resolve().parent
@@ -397,3 +397,6 @@ def save_response_to_file(response_text: str) -> str:
 
 
 file_path = save_response_to_file(answer)
+print("============================================================================================")
+print(f"Report Saved Successfully at {file_path} ✅")
+print("============================================================================================")

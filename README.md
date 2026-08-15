@@ -42,27 +42,52 @@ A focused project that segments customers, predicts churn, and lets you ask ques
 If you already have a Claude Code subscription, you can use the agent directly without additional setup.  
 If you do not have a subscription and want to use the agent for free, follow the prerequisites and steps above.
 
-## How to run
+## How to run in powershell
 ## Option 1:
-1. Install dependencies  
+1. Clone Repo
+   ```
+   git clone https://github.com/FixerSoup/Churn-Prediction-Retention-Analysis.git
+   ```
+2. Move to project Root Folder
+   ```
+   cd Churn-Prediction-Retention-Analysis
+   ```
+3. Create virtual env
+   ```
+   python -m venv your_env_name
+   ```
+   **Note** if using conda env then : 
+   ```
+   conda create -n your_env_name python=3.14
+   conda activate your_env_name
+   ```
+4. Activate venv
+```
+   .\venv\Scripts\Activate.ps1
+```  
+5. Install dependencies  
    ```bash
    pip install -r requirements.txt
    ```
-2. Create a `.env` file with your Gemini key:  
+6. Create a `.env` file with your own Gemini key inside the project root folder(Churn-Prediction-Retention-Analysis):  
    ```bash
    GEMINI_API_KEY=your_key_here
    ```
-3. Launch the agent (or demo)  
+7. Launch the agent (or demo)  
    ```bash
-   python scripts/tool_develop.py   # interactive console
+   python scripts/run_agent.py   # interactive console
    ```
+8. To save the report as a pdf file
+```
+python save_to_pdf.py
+```
 
 ## **Unique Feature of the project**
 ## Option 2: 
 - Run it using claude code CLI by simple commands
-- Clone the Repo 
+- Clone Repo 
 ```
-https://github.com/FixerSoup/Churn-Prediction-Retention-Analysis.git
+git clone https://github.com/FixerSoup/Churn-Prediction-Retention-Analysis.git
 ```
 - Open the project root folder
 - activate the Virtual Environment 

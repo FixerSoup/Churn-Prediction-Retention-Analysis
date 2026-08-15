@@ -54,26 +54,32 @@ def convert_markdown_to_pdf(md_text: str, output_path: Path):
     return not pisa_status.err
 
 # ============================================================
-# Process every .md file in the source folder
+# Process only the single most recently modified .md file
 # ============================================================
-def process_all_files():
-    md_files = list(SOURCE_FOLDER.glob("*.md"))
-    
+def get_latest_md_file(folder: Path) -> Path | None:
+    """Returns the most recently modified .md file in the folder, or None if empty."""
+    md_files = list(folder.glob("*.md"))
     if not md_files:
+        return None
+    return max(md_files, key=lambda f: f.stat().st_mtime)
+
+def process_latest_file():
+    latest_md = get_latest_md_file(SOURCE_FOLDER)
+
+    if latest_md is None:
         print("No .md files found in source folder.")
         return
-    
-    for md_file in md_files:
-        with open(md_file, "r", encoding="utf-8") as f:
-            text = f.read()
-        
-        filename = generate_random_filename(md_file.stem)
-        output_path = TARGET_FOLDER / filename
-        
-        success = convert_markdown_to_pdf(text, output_path)
-        if success:
-            print(f"Converted: {md_file.name} -> {filename}")
-            print(f"Successfully saved to {TARGET_FOLDER/filename} ✅")
+
+    with open(latest_md, "r", encoding="utf-8") as f:
+        text = f.read()
+
+    filename = generate_random_filename(latest_md.stem)
+    output_path = TARGET_FOLDER / filename
+
+    success = convert_markdown_to_pdf(text, output_path)
+    if success:
+        print(f"Converted latest file: {latest_md.name} -> {filename}")
+        print(f"Successfully saved to {output_path} ✅")
 
 if __name__ == "__main__":
-    process_all_files()
+    process_latest_file()
