@@ -42,13 +42,6 @@ A focused project that segments customers, predicts churn, and lets you ask ques
 - Provide robust analysis and precise overview with prediction features
 - [Visual Mind Maps for easy understanding of the flow of execution](https://github.com/FixerSoup/Churn-Prediction-Retention-Analysis/tree/main/visual%20mindmaps%20for%20easy%20understanding)
 
-## Basic terms (short & precise)
-- **Churn**: Customer leaves or stops using the service.
-- **Segmentation**: Grouping customers with similar behavior.
-- **Feature**: Measurable input for the model (e.g., age, days since last login).
-- **Model**: Algorithm that learns patterns to predict churn.
-- **Probability**: Estimated chance of churn (0 = never, 1 = certain).
-
 ## Claude Code Subscription Note
 - If you already have a Claude Code subscription, you can use the agent directly without additional setup.  
 - If you do not have a subscription and want to use the agent for free, follow the prerequisites and steps above.
