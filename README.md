@@ -61,9 +61,9 @@ A focused project that segments customers, predicts churn, and lets you ask ques
    ```
    cd Churn-Prediction-Retention-Analysis
    ```
-3. Create a `.env` file with your own Gemini key  
+3. Create a `.env` file with your own Gemini key
    ```
-   'GEMINI_API_KEY="your_actual_api_key_here"' | Out-File -FilePath .env -Encoding utf8
+   'GEMINI_API_KEY=your_actual_api_key_here' | Out-File -FilePath .env -Encoding utf8
    ```
 4. Create virtual env
    ```

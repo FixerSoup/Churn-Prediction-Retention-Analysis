@@ -277,7 +277,7 @@ churn_prediction_tool = types.Tool(
 )
 
 
-root_env = Path.cwd().resolve().parent/ ".env"
+root_env = root / ".env"
 load_dotenv(dotenv_path=root_env)
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
