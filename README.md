@@ -1,5 +1,3 @@
-# Customer Segmentation & Churn Prediction
-
 ![Space README Banner](space_readme_banner.svg)
 
 ![Churn Prediction Animation](churn_prediction_animation.svg)
